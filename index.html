@@ -1061,42 +1061,6 @@
             border-color: rgba(255,255,255,0.4);
         }
 
-        @media (max-width: 768px) {
-            #about {
-                padding: 60px 24px;
-            }
-            .about-container {
-                flex-direction: column;
-                gap: 40px;
-            }
-            .about-left, .about-right {
-                flex: 0 0 100%;
-                width: 100%;
-            }
-            .about-collage {
-                height: 320px;
-            }
-            .about-headline .line-1, .about-headline .line-2 {
-                font-size: 38px;
-            }
-        }
-        @media (max-width: 1024px) {
-            .facilities-cta-banner {
-                flex-direction: column;
-                text-align: center;
-                padding: 40px;
-                gap: 30px;
-            }
-            .cta-left, .cta-right {
-                flex: 0 0 100%;
-                width: 100%;
-            }
-            .cta-right {
-                max-width: 320px;
-                margin: 0 auto;
-            }
-        }
-
         /* --- Gallery Section --- */
         #gallery {
             background-color: var(--bg);
@@ -1210,130 +1174,229 @@
             font-size: 13px;
         }
 
-        /* --- Responsive --- */
+        /* --- Responsive Media Queries --- */
         @media (max-width: 1024px) {
             .rooms-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
             .facilities-grid { grid-template-columns: repeat(2, 1fr); }
-            .facilities-cta-banner { flex-direction: column; text-align: center; gap: 30px; padding: 40px; }
-            .cta-right { text-align: center; }
-            .cta-numbers { justify-content: center; }
+            .gallery-columns { column-count: 2; }
+            .about-container { gap: 40px; }
         }
 
         @media (max-width: 768px) {
-            #hero {
-                height: 100vh;
-                height: 100dvh;
-                min-height: -webkit-fill-available;
+            /* 11. FORCE TEXT COLORS VISIBLE */
+            * { -webkit-text-fill-color: unset !important; }
+            
+            body {
+                background: #0E0E0E !important;
+            }
+
+            .hero-headline,
+            h1, h2, h3, h4, h5, h6 {
+                color: #F2EDE4 !important;
+                opacity: 1 !important;
             }
             
-            .hero-headline .line-1, .hero-headline .line-2 { 
-                font-size: 52px; 
-                line-height: 1.05;
+            p, span, li, a:not(.btn-book):not(.btn-hero):not(.btn-whatsapp):not(.btn-cta-banner) {
+                color: rgba(242, 237, 228, 0.8) !important;
             }
 
-            /* Hide floating review card and badge on mobile to avoid clutter */
-            .hero-review-card, .hero-logo-badge, .hero-badge, .floating-review { 
-                display: none; 
-            }
-
-            /* Rating pill stays visible but repositioned */
-            .hero-rating-badge, .rating-badge {
-                top: 80px;
-                right: 20px;
-                font-size: 12px;
-                padding: 8px 16px;
-            }
-
-            .hero-content { padding: 0 30px; }
-            .rooms-grid { grid-template-columns: 1fr; gap: 24px; padding: 0 16px; }
-            .room-img-area { height: 260px; }
-            .facilities-header h2 { font-size: 42px; }
-            .facilities-grid { grid-template-columns: 1fr; gap: 20px; }
-            .footer-strip { grid-template-columns: 1fr; gap: 20px; text-align: center; }
-            .footer-item { flex-direction: column; }
-            .hero-ctas { flex-direction: column; width: 100%; padding: 0 20px; }
-            .btn-filled, .btn-outline { width: 100%; min-width: unset; }
-        }
-
-        /* Fix for iPhone Safari 100vh bug */
-        @supports (-webkit-touch-callout: none) {
+            /* 1. HERO SECTION */
             #hero {
-                height: -webkit-fill-available;
+                height: 100dvh !important;
+                min-height: 100dvh !important;
+                display: flex !important;
+                align-items: flex-end !important;
+                justify-content: flex-start !important;
+                background-position: center center !important;
             }
-        }
-            .review-card {
-                left: 20px;
-                bottom: 20px;
-                max-width: 240px;
+
+            #hero .hero-content {
+                position: absolute !important;
+                bottom: 60px !important;
+                left: 24px !important;
+                right: 24px !important;
+                text-align: left !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                max-width: none !important;
+                align-items: flex-start !important;
+                height: auto !important;
             }
-            .floating-badge {
-                width: 90px;
-                height: 90px;
-                right: -10px;
-                bottom: -10px;
+
+            .hero-label {
+                font-size: 9px !important;
+                letter-spacing: 0.2em !important;
+                margin-bottom: 12px !important;
             }
+            .hero-label::before, .hero-label::after { display: none !important; }
+
+            .hero-headline {
+                font-size: 44px !important;
+                line-height: 1.05 !important;
+                margin-bottom: 16px !important;
+            }
+            .hero-headline .line-1, 
+            .hero-headline .line-2 {
+                font-size: 44px !important;
+                display: block !important;
+            }
+
+            .hero-subtitle {
+                font-size: 15px !important;
+                margin-bottom: 32px !important;
+                max-width: 100% !important;
+                color: rgba(255,255,255,0.8) !important;
+            }
+
+            .ornament-divider {
+                margin: 16px 0 !important;
+                justify-content: flex-start !important;
+                width: 120px !important;
+            }
+
             .hero-ctas {
-                justify-content: center;
-                flex-wrap: nowrap;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 12px !important;
+                width: 100% !important;
             }
-            .rooms-grid, .facilities-grid {
-                grid-template-columns: repeat(2, 1fr);
+
+            .hero-ctas .btn-hero {
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 18px !important;
+                text-align: center !important;
+                font-size: 11px !important;
             }
-            .location-container {
-                flex-direction: column;
+
+            .hero-rating-badge, 
+            .hero-review-card, 
+            .hero-logo-badge, 
+            .hero-scroll-indicator,
+            .hero-badge,
+            .floating-review {
+                display: none !important;
             }
+
+            /* 2. NAVBAR MOBILE */
+            nav {
+                height: 60px !important;
+                background: rgba(14, 14, 14, 0.9) !important;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }
+            .nav-container {
+                height: 60px !important;
+                padding: 0 20px !important;
+            }
+            .nav-links { display: none !important; }
+            .nav-logo img {
+                width: 44px !important;
+                height: 44px !important;
+            }
+            .btn-book {
+                padding: 8px 16px !important;
+                font-size: 10px !important;
+            }
+
+            /* 3. ALL SECTIONS */
+            section {
+                padding: 60px 24px !important;
+            }
+
+            /* 4. ROOMS SECTION */
+            .rooms-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            .room-img-area {
+                height: 240px !important;
+            }
+
+            /* 5. ABOUT SECTION */
+            #about .about-container {
+                flex-direction: column !important;
+                gap: 32px !important;
+            }
+            .about-left, .about-right {
+                width: 100% !important;
+                flex: none !important;
+            }
+            .about-collage {
+                width: 100% !important;
+                height: 280px !important;
+                margin-bottom: 32px !important;
+            }
+            .about-headline .line-1, 
+            .about-headline .line-2 {
+                font-size: 36px !important;
+            }
+
+            /* 6. FACILITIES SECTION */
+            .facilities-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 16px !important;
+            }
+            .feature-block {
+                padding: 24px 16px !important;
+            }
+            .feature-block:nth-child(even) {
+                border-right: none !important;
+            }
+
+            /* 7. GALLERY SECTION */
             .gallery-columns {
-                column-count: 2;
+                column-count: 2 !important;
+                gap: 6px !important;
             }
-            .nav-links {
-                display: none;
+
+            /* 8. LOCATION SECTION */
+            .location-container {
+                flex-direction: column !important;
+                gap: 40px !important;
+            }
+            .location-map iframe {
+                width: 100% !important;
+                height: 260px !important;
+            }
+
+            /* 9 & 12. CTA BANNER / WARM HOSPITALITY BANNER */
+            .facilities-cta-banner {
+                flex-direction: column !important;
+                gap: 24px !important;
+                padding: 40px 24px !important;
+                text-align: center !important;
+            }
+            .cta-left, .cta-right {
+                width: 100% !important;
+                flex: none !important;
+            }
+            .cta-right {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 12px !important;
+            }
+            .btn-cta-banner {
+                width: 100% !important;
+                margin: 0 !important;
+            }
+
+            /* 10. FOOTER */
+            footer .footer-strip {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 32px !important;
+                text-align: center !important;
+                padding: 40px 24px !important;
+                grid-template-columns: 1fr !important;
+            }
+            .footer-item {
+                flex-direction: column !important;
+                gap: 10px !important;
+                justify-content: center !important;
             }
         }
 
-        @media (max-width: 1024px) {
-            .rooms-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-        }
-
-        @media (max-width: 768px) {
-            #hero {
-                height: 100vh;
-                height: 100dvh;
-                min-height: -webkit-fill-available;
-            }
-            
-            .hero-headline .line-1, .hero-headline .line-2 { 
-                font-size: 52px; 
-                line-height: 1.05;
-            }
-
-            /* Hide floating review card and badge on mobile to avoid clutter */
-            .hero-review-card, .hero-logo-badge, .hero-badge, .floating-review { 
-                display: none; 
-            }
-
-            /* Rating pill stays visible but repositioned */
-            .hero-rating-badge, .rating-badge {
-                top: 80px;
-                right: 20px;
-                font-size: 12px;
-                padding: 8px 16px;
-            }
-
-            .hero-content { padding: 0 30px; }
-            .rooms-grid { grid-template-columns: 1fr; gap: 24px; padding: 0 16px; }
-            .room-img-area { height: 260px; }
-            .footer-strip { grid-template-columns: 1fr; gap: 20px; text-align: center; }
-            .footer-item { flex-direction: column; }
-            .hero-ctas { flex-direction: column; width: 100%; padding: 0 20px; }
-            .btn-filled, .btn-outline { width: 100%; min-width: unset; }
-        }
-
-        /* Fix for iPhone Safari 100vh bug */
-        @supports (-webkit-touch-callout: none) {
-            #hero {
-                height: -webkit-fill-available;
-            }
-        }
 
         /* --- Room Carousel Gradients --- */
         .grad-lotus-1 { background: linear-gradient(135deg, #8B7355, #C4A882); }
@@ -1430,7 +1493,21 @@
         </div>
 
         <div class="hero-content">
-            <a href="#rooms" class="btn-hero">EXPLORE ROOMS</a>
+            <span class="hero-label">Boutique Stay in Dibrugarh</span>
+            <h1 class="hero-headline">
+                <span class="line-1">The Open Door</span>
+                <span class="line-2">Homestay</span>
+            </h1>
+            <div class="ornament-divider">
+                <div class="line"></div>
+                <div class="diamond"></div>
+                <div class="line"></div>
+            </div>
+            <p class="hero-subtitle">Experience homely warmth, premium comfort, and a peaceful atmosphere in the heart of Assam.</p>
+            <div class="hero-ctas">
+                <a href="#rooms" class="btn-hero">EXPLORE ROOMS</a>
+                <a href="https://wa.me/916900571068" class="btn-hero" target="_blank" style="margin-top: 12px; border-color: var(--gold); background: rgba(200, 151, 43, 0.1);">WHATSAPP US</a>
+            </div>
         </div>
 
         <div class="hero-review-card">
