@@ -1213,7 +1213,12 @@
             }
 
             .hero-overlay {
-                background: rgba(0,0,0,0.4) !important;
+                background: linear-gradient(
+                    to bottom,
+                    rgba(0,0,0,0.25) 0%,
+                    rgba(0,0,0,0.15) 50%,
+                    rgba(0,0,0,0.45) 100%
+                ) !important;
             }
 
             #hero .hero-content {
@@ -1269,25 +1274,40 @@
                 display: none !important;
             }
 
-            /* 2. NAVBAR MOBILE */
+            /* 2. NAVBAR MOBILE - Floating Look */
             nav {
-                height: 60px !important;
-                background: rgba(14, 14, 14, 0.9) !important;
-                backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
+                height: auto !important;
+                background: transparent !important;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+                position: absolute !important;
+                padding-top: 24px !important;
             }
             .nav-container {
-                height: 60px !important;
-                padding: 0 20px !important;
+                height: auto !important;
+                padding: 0 24px !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
             }
             .nav-links { display: none !important; }
             .nav-logo img {
-                width: 44px !important;
-                height: 44px !important;
+                width: 64px !important;
+                height: 64px !important;
+                border: 2px solid rgba(255,255,255,0.3) !important;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
             }
             .btn-book {
-                padding: 8px 16px !important;
-                font-size: 10px !important;
+                background: rgba(200, 151, 43, 0.25) !important;
+                border: 1.5px solid rgba(200, 151, 43, 0.7) !important;
+                color: #FFFFFF !important;
+                padding: 14px 28px !important;
+                font-size: 12px !important;
+                letter-spacing: 0.1em !important;
+                border-radius: 50px !important;
+                backdrop-filter: blur(8px) !important;
+                -webkit-backdrop-filter: blur(8px) !important;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.15) !important;
             }
 
             /* 3. ALL SECTIONS */
