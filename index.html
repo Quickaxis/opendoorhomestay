@@ -1183,89 +1183,154 @@
 
         .gallery-item .placeholder {
             width: 100%;
-        }
-
-        /* --- Location Section --- */
+        }        /* --- Location Section (Find Us) --- */
         #contact {
-            background-color: var(--cream-dark);
+            background: #0E0E0E;
+            padding: 100px 80px;
         }
 
         .location-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             gap: 60px;
             align-items: flex-start;
         }
 
         .location-info {
-            flex: 1;
+            flex: 0 0 40%;
+        }
+
+        .location-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.3em;
+            color: #C8972B;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        #contact .section-header {
+            text-align: left;
+            margin-bottom: 48px;
+        }
+
+        #contact .section-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 52px;
+            font-weight: 300;
+            color: #F2EDE4;
+            margin-bottom: 16px;
+        }
+
+        #contact .section-header h2::after {
+            left: 0;
+            transform: none;
+            width: 60px;
         }
 
         .info-item {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 30px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(200,151,43,0.1);
+            display: block;
         }
 
-        .info-icon {
-            width: 24px;
-            height: 24px;
-            fill: var(--gold);
-            flex-shrink: 0;
+        .info-item:last-child {
+            border-bottom: none;
         }
 
-        .info-content h4 {
+        .info-title {
             font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
+            font-size: 10px;
             font-weight: 600;
-            color: var(--gold);
-            margin-bottom: 5px;
+            letter-spacing: 0.25em;
+            color: #C8972B;
             text-transform: uppercase;
+            margin-bottom: 8px;
+            display: block;
         }
 
-        .info-content p {
-            font-size: 16px;
-            color: var(--charcoal);
+        .info-value {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 300;
+            color: #C8B89A;
+            line-height: 1.7;
+            display: block;
         }
 
-        .location-map {
-            flex: 1.5;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        .btn-whatsapp-contact {
+            display: inline-block;
+            background: transparent;
+            border: 1px solid rgba(200,151,43,0.4);
+            color: #C8972B;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            padding: 14px 32px;
+            margin-top: 32px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .btn-whatsapp-contact:hover {
+            background: rgba(200,151,43,0.1);
+            border-color: rgba(200,151,43,0.6);
+        }
+
+        .location-map-wrapper {
+            flex: 0 0 60%;
+            border: 1px solid rgba(200,151,43,0.2);
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
         }
 
         /* --- Footer --- */
         footer {
-            background-color: var(--gold);
+            background: #0A0A0A;
+            border-top: 1px solid rgba(200,151,43,0.15);
         }
 
         .footer-strip {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            padding: 30px 40px;
-            color: var(--white);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            font-weight: 500;
+            padding: 28px 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .footer-item {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 12px;
+            gap: 10px;
         }
 
-        .footer-item svg {
-            width: 18px;
-            height: 18px;
-            fill: var(--white);
+        .footer-item i {
+            color: #C8972B;
+            font-size: 14px;
+        }
+
+        .footer-item span {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 300;
+            color: #666;
         }
 
         .footer-bottom {
-            background-color: var(--charcoal);
-            padding: 20px;
+            background: #080808;
+            padding: 16px;
             text-align: center;
-            color: rgba(255,255,255,0.5);
-            font-size: 13px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 300;
+            color: #333;
+            letter-spacing: 0.02em;
         }
 
         /* --- Responsive Media Queries --- */
@@ -1456,48 +1521,29 @@
             }
 
             /* 8. LOCATION SECTION */
+            #contact {
+                padding: 60px 24px !important;
+            }
             .location-container {
                 flex-direction: column !important;
                 gap: 40px !important;
             }
-            .location-map iframe {
-                width: 100% !important;
-                height: 260px !important;
-            }
-
-            /* 9 & 12. CTA BANNER / WARM HOSPITALITY BANNER */
-            .facilities-cta-banner {
-                flex-direction: column !important;
-                gap: 24px !important;
-                padding: 40px 24px !important;
-                text-align: center !important;
-            }
-            .cta-left, .cta-right {
+            .location-info, .location-map-wrapper {
                 width: 100% !important;
                 flex: none !important;
             }
-            .cta-right {
-                display: flex !important;
-                flex-direction: column !important;
-                gap: 12px !important;
-            }
-            .btn-cta-banner {
-                width: 100% !important;
-                margin: 0 !important;
+            .location-map-wrapper iframe {
+                height: 280px !important;
             }
 
             /* 10. FOOTER */
-            footer .footer-strip {
-                display: flex !important;
+            .footer-strip {
                 flex-direction: column !important;
-                gap: 32px !important;
+                gap: 16px !important;
                 text-align: center !important;
                 padding: 40px 24px !important;
-                grid-template-columns: 1fr !important;
             }
             .footer-item {
-                flex-direction: column !important;
-                gap: 10px !important;
                 justify-content: center !important;
             }
         }
@@ -2146,48 +2192,46 @@
 
     <!-- Location Section -->
     <section id="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Find Us</h2>
+        <div class="location-container">
+            <div class="location-info">
+                <span class="location-label">CONTACT & LOCATION</span>
+                <div class="section-header">
+                    <h2>Find Us</h2>
+                </div>
+
+                <div class="info-list">
+                    <div class="info-item">
+                        <span class="info-title">ADDRESS</span>
+                        <span class="info-value">Sultan Path, Naliapool, Dibrugarh, Assam 786001</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-title">PHONE</span>
+                        <span class="info-value">+91 6900571068 / +91 6901876058</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-title">EMAIL</span>
+                        <span class="info-value">opendoorhomestay24@gmail.com</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-title">INSTAGRAM</span>
+                        <span class="info-value">@opendoorhomestay</span>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/916900571068" class="btn-whatsapp-contact" target="_blank">
+                    💬 &nbsp; CHAT ON WHATSAPP
+                </a>
             </div>
 
-            <div class="location-container">
-                <div class="location-info">
-                    <div class="info-item">
-                        <svg class="info-icon"><use xlink:href="#icon-location"/></svg>
-                        <div class="info-content">
-                            <h4>Address</h4>
-                            <p>Sultan Path, Naliapool, Dibrugarh, Assam 786001</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <svg class="info-icon"><use xlink:href="#icon-phone"/></svg>
-                        <div class="info-content">
-                            <h4>Phone</h4>
-                            <p>6900571068, 6901876058</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <svg class="info-icon"><use xlink:href="#icon-mail"/></svg>
-                        <div class="info-content">
-                            <h4>Email</h4>
-                            <p>opendoorhomestay24@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <svg class="info-icon"><use xlink:href="#icon-instagram"/></svg>
-                        <div class="info-content">
-                            <h4>Instagram</h4>
-                            <p>@opendoorhomestay</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="location-map">
-                    <iframe src="https://maps.google.com/maps?q=Naliapool,Dibrugarh,Assam&output=embed" 
-                    width="100%" height="350" style="border:none; border-radius:4px;" allowfullscreen="" loading="lazy">
-                    </iframe>
-                </div>
+            <div class="location-map-wrapper">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3534.5!2d94.9!3d27.47!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3742b787b8888889%3A0x1!2sNaliapool%2C+Dibrugarh%2C+Assam!5e0!3m2!1sen!2sin!4v1"
+                    width="100%"
+                    height="420"
+                    style="border:none; border-radius:4px; filter: grayscale(20%) contrast(1.1);"
+                    allowfullscreen=""
+                    loading="lazy">
+                </iframe>
             </div>
         </div>
     </section>
@@ -2196,20 +2240,20 @@
     <footer>
         <div class="footer-strip">
             <div class="footer-item">
-                <svg><use xlink:href="#icon-phone"/></svg>
+                <i>📞</i>
                 <span>6900571068 | 6901876058</span>
             </div>
             <div class="footer-item">
-                <svg><use xlink:href="#icon-location"/></svg>
+                <i>📍</i>
                 <span>Sultan Path, Naliapool, Dibrugarh</span>
             </div>
             <div class="footer-item">
-                <svg><use xlink:href="#icon-mail"/></svg>
+                <i>✉</i>
                 <span>opendoorhomestay24@gmail.com</span>
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2025 The Open Door Homestay. All rights reserved.
+            © 2025 The Open Door Homestay · Dibrugarh, Assam · All rights reserved.
         </div>
     </footer>
 
