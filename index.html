@@ -660,69 +660,90 @@
             flex-shrink: 0;
         }
 
-        .book-options {
+        .book-wrapper {
           margin-top: 20px;
-          padding-top: 16px;
-          border-top: 1px solid rgba(200,151,43,0.15);
+          position: relative;
         }
 
-        .book-label {
+        /* MAIN BOOK NOW BUTTON — Glassmorphism */
+        .btn-book-now {
+          width: 100%;
+          padding: 16px;
           font-family: 'Montserrat', sans-serif;
-          font-size: 10px;
-          font-weight: 600;
-          letter-spacing: 0.25em;
-          color: #C8972B;
-          text-align: center;
-          margin-bottom: 12px;
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: 0.2em;
           text-transform: uppercase;
+          cursor: pointer;
+          border-radius: 50px;
+          border: 1px solid rgba(200,151,43,0.5);
+          background: rgba(200,151,43,0.12);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          color: #C8972B;
+          transition: all 0.3s ease;
+          position: relative;
+          z-index: 2;
         }
 
-        .book-buttons {
-          display: flex;
-          gap: 10px;
+        .btn-book-now:hover {
+          background: rgba(200,151,43,0.22);
+          border-color: #C8972B;
+          box-shadow: 0 4px 24px rgba(200,151,43,0.15);
         }
 
-        .btn-glass {
-          flex: 1;
+        .btn-book-now.active {
+          border-radius: 50px 50px 0 0;
+          border-bottom: 1px solid rgba(200,151,43,0.15);
+        }
+
+        /* DROPDOWN OPTIONS */
+        .book-dropdown {
+          width: 100%;
+          border-radius: 0 0 24px 24px;
+          overflow: hidden;
+          border: 1px solid rgba(200,151,43,0.3);
+          border-top: none;
+          background: rgba(255,255,255,0.85);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          animation: dropDown 0.25s ease;
+        }
+
+        @keyframes dropDown {
+          from { opacity: 0; transform: translateY(-8px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        .book-option-btn {
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 6px;
-          padding: 14px 12px;
+          width: 100%;
+          padding: 14px;
           font-family: 'Montserrat', sans-serif;
           font-size: 11px;
-          font-weight: 700;
-          letter-spacing: 0.12em;
+          font-weight: 600;
+          letter-spacing: 0.15em;
           text-decoration: none;
           text-transform: uppercase;
-          border-radius: 0;
-          cursor: pointer;
-          transition: all 0.3s ease;
-
-          /* Glassmorphism */
-          background: rgba(26, 26, 26, 0.6);
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
-          border: 1px solid rgba(200,151,43,0.35);
-          color: #F2EDE4;
+          transition: all 0.2s ease;
         }
 
-        .btn-glass:hover {
-          background: rgba(200,151,43,0.15);
-          border-color: #C8972B;
+        .whatsapp-btn {
+          color: #1B4332;
+          border-bottom: 1px solid rgba(200,151,43,0.15);
+        }
+        .whatsapp-btn:hover {
+          background: rgba(37,211,102,0.1);
+          color: #1a7a40;
+        }
+
+        .call-btn {
           color: #C8972B;
         }
-
-        .btn-whatsapp:hover {
-          background: rgba(37,211,102,0.15);
-          border-color: rgba(37,211,102,0.6);
-          color: #25D366;
-        }
-
-        .btn-call:hover {
-          background: rgba(200,151,43,0.2);
-          border-color: #C8972B;
-          color: #C8972B;
+        .call-btn:hover {
+          background: rgba(200,151,43,0.1);
         }
 
         /* --- Everything You Need Section --- */
@@ -1753,14 +1774,18 @@
                             <div class="facility-item"><span class="facility-icon">🚿</span> Instant Geyser</div>
                             <div class="facility-item"><span class="facility-icon">🚪</span> Attached Bathroom</div>
                         </div>
-                        <div class="book-options">
-                          <p class="book-label">Book Your Stay</p>
-                          <div class="book-buttons">
-                            <a class="btn-glass btn-whatsapp" href="https://wa.me/916900571068" target="_blank">
-                              💬 WhatsApp
+                        <div class="book-wrapper">
+                          <button class="btn-book-now" onclick="toggleBookOptions(this)">
+                            BOOK NOW
+                          </button>
+                          <div class="book-dropdown" style="display:none;">
+                            <a class="book-option-btn whatsapp-btn" 
+                               href="https://wa.me/916900571068" target="_blank">
+                              💬 &nbsp; Book on WhatsApp
                             </a>
-                            <a class="btn-glass btn-call" href="tel:+916900571068">
-                              📞 Call Now
+                            <a class="book-option-btn call-btn" 
+                               href="tel:+916900571068">
+                              📞 &nbsp; Call Now
                             </a>
                           </div>
                         </div>
@@ -1830,14 +1855,18 @@
                             <div class="facility-item"><span class="facility-icon">🚿</span> Instant Geyser</div>
                             <div class="facility-item"><span class="facility-icon">🚪</span> Attached Bathroom</div>
                         </div>
-                        <div class="book-options">
-                          <p class="book-label">Book Your Stay</p>
-                          <div class="book-buttons">
-                            <a class="btn-glass btn-whatsapp" href="https://wa.me/916900571068" target="_blank">
-                              💬 WhatsApp
+                        <div class="book-wrapper">
+                          <button class="btn-book-now" onclick="toggleBookOptions(this)">
+                            BOOK NOW
+                          </button>
+                          <div class="book-dropdown" style="display:none;">
+                            <a class="book-option-btn whatsapp-btn" 
+                               href="https://wa.me/916900571068" target="_blank">
+                              💬 &nbsp; Book on WhatsApp
                             </a>
-                            <a class="btn-glass btn-call" href="tel:+916900571068">
-                              📞 Call Now
+                            <a class="book-option-btn call-btn" 
+                               href="tel:+916900571068">
+                              📞 &nbsp; Call Now
                             </a>
                           </div>
                         </div>
@@ -2203,6 +2232,40 @@
                     updateCarousel();
                 });
             });
+        });
+
+        function toggleBookOptions(btn) {
+          const dropdown = btn.nextElementSibling;
+          const isOpen = dropdown.style.display === 'flex';
+          
+          // Close all other open dropdowns first
+          document.querySelectorAll('.book-dropdown').forEach(d => {
+            d.style.display = 'none';
+          });
+          document.querySelectorAll('.btn-book-now').forEach(b => {
+            b.classList.remove('active');
+            b.textContent = 'BOOK NOW';
+          });
+
+          if (!isOpen) {
+            dropdown.style.display = 'flex';
+            dropdown.style.flexDirection = 'column';
+            btn.classList.add('active');
+            btn.textContent = '✕  CLOSE';
+          }
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+          if (!e.target.closest('.book-wrapper')) {
+            document.querySelectorAll('.book-dropdown').forEach(d => {
+              d.style.display = 'none';
+            });
+            document.querySelectorAll('.btn-book-now').forEach(b => {
+              b.classList.remove('active');
+              b.textContent = 'BOOK NOW';
+            });
+          }
         });
 
     </script>
