@@ -1189,17 +1189,17 @@
             }
             
             body {
-                background: #0E0E0E !important;
+                background: var(--bg) !important;
             }
 
-            .hero-headline,
-            h1, h2, h3, h4, h5, h6 {
-                color: #F2EDE4 !important;
-                opacity: 1 !important;
+            /* 11. FORCE TEXT COLORS VISIBLE - BLACK ON LIGHT */
+            h1, h2, h3, h4, h5, h6, p, li {
+                color: var(--charcoal) !important;
             }
             
-            p, span, li, a:not(.btn-book):not(.btn-hero):not(.btn-whatsapp):not(.btn-cta-banner) {
-                color: rgba(242, 237, 228, 0.8) !important;
+            /* Preserve button text contrast */
+            .btn-hero, .btn-book, .btn-whatsapp, .btn-cta-banner, .btn-whatsapp span {
+                color: #FFFFFF !important;
             }
 
             /* 1. HERO SECTION - Restored Old Format */
