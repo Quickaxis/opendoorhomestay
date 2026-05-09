@@ -1697,14 +1697,18 @@
                             <div class="facility-item"><span class="facility-icon">🚿</span> Instant Geyser</div>
                             <div class="facility-item"><span class="facility-icon">🚪</span> Attached Bathroom</div>
                         </div>
-                        <div class="book-options">
-                          <p class="book-label">Book Your Stay</p>
-                          <div class="book-buttons">
-                            <a class="btn-glass btn-whatsapp" href="https://wa.me/916900571068" target="_blank">
-                              💬 WhatsApp
+                        <div class="book-wrapper">
+                          <button class="btn-book-now" onclick="toggleBookOptions(this)">
+                            BOOK NOW
+                          </button>
+                          <div class="book-dropdown" style="display:none;">
+                            <a class="book-option-btn whatsapp-btn" 
+                               href="https://wa.me/916900571068" target="_blank">
+                              💬 &nbsp; Book on WhatsApp
                             </a>
-                            <a class="btn-glass btn-call" href="tel:+916900571068">
-                              📞 Call Now
+                            <a class="book-option-btn call-btn" 
+                               href="tel:+916900571068">
+                              📞 &nbsp; Call Now
                             </a>
                           </div>
                         </div>
