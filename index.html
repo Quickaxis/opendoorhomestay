@@ -660,26 +660,69 @@
             flex-shrink: 0;
         }
 
-        .btn-whatsapp {
-            width: 100%;
-            background: var(--green);
-            color: white;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 12px;
-            letter-spacing: 0.15em;
-            padding: 18px;
-            border-radius: 8px;
-            border: none;
-            cursor: pointer;
-            text-align: center;
-            transition: var(--transition);
-            text-transform: uppercase;
-            margin-top: auto;
+        .book-options {
+          margin-top: 20px;
+          padding-top: 16px;
+          border-top: 1px solid rgba(200,151,43,0.15);
+        }
+
+        .book-label {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 10px;
+          font-weight: 600;
+          letter-spacing: 0.25em;
+          color: #C8972B;
+          text-align: center;
+          margin-bottom: 12px;
+          text-transform: uppercase;
+        }
+
+        .book-buttons {
+          display: flex;
+          gap: 10px;
+        }
+
+        .btn-glass {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+          padding: 14px 12px;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.12em;
+          text-decoration: none;
+          text-transform: uppercase;
+          border-radius: 0;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          /* Glassmorphism */
+          background: rgba(26, 26, 26, 0.6);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border: 1px solid rgba(200,151,43,0.35);
+          color: #F2EDE4;
+        }
+
+        .btn-glass:hover {
+          background: rgba(200,151,43,0.15);
+          border-color: #C8972B;
+          color: #C8972B;
         }
 
         .btn-whatsapp:hover {
-            background: #0F2D1F;
+          background: rgba(37,211,102,0.15);
+          border-color: rgba(37,211,102,0.6);
+          color: #25D366;
+        }
+
+        .btn-call:hover {
+          background: rgba(200,151,43,0.2);
+          border-color: #C8972B;
+          color: #C8972B;
         }
 
         /* --- Everything You Need Section --- */
@@ -1633,7 +1676,17 @@
                             <div class="facility-item"><span class="facility-icon">🚿</span> Instant Geyser</div>
                             <div class="facility-item"><span class="facility-icon">🚪</span> Attached Bathroom</div>
                         </div>
-                        <a href="https://wa.me/916900571068" class="btn-whatsapp" target="_blank">Book via WhatsApp</a>
+                        <div class="book-options">
+                          <p class="book-label">Book Your Stay</p>
+                          <div class="book-buttons">
+                            <a class="btn-glass btn-whatsapp" href="https://wa.me/916900571068" target="_blank">
+                              💬 WhatsApp
+                            </a>
+                            <a class="btn-glass btn-call" href="tel:+916900571068">
+                              📞 Call Now
+                            </a>
+                          </div>
+                        </div>
                     </div>
                 </div>
 
@@ -1700,7 +1753,17 @@
                             <div class="facility-item"><span class="facility-icon">🚿</span> Instant Geyser</div>
                             <div class="facility-item"><span class="facility-icon">🚪</span> Attached Bathroom</div>
                         </div>
-                        <a href="https://wa.me/916900571068" class="btn-whatsapp" target="_blank">Book via WhatsApp</a>
+                        <div class="book-options">
+                          <p class="book-label">Book Your Stay</p>
+                          <div class="book-buttons">
+                            <a class="btn-glass btn-whatsapp" href="https://wa.me/916900571068" target="_blank">
+                              💬 WhatsApp
+                            </a>
+                            <a class="btn-glass btn-call" href="tel:+916900571068">
+                              📞 Call Now
+                            </a>
+                          </div>
+                        </div>
                     </div>
                 </div>
 
@@ -1767,7 +1830,17 @@
                             <div class="facility-item"><span class="facility-icon">🚿</span> Instant Geyser</div>
                             <div class="facility-item"><span class="facility-icon">🚪</span> Attached Bathroom</div>
                         </div>
-                        <a href="https://wa.me/916900571068" class="btn-whatsapp" target="_blank">Book via WhatsApp</a>
+                        <div class="book-options">
+                          <p class="book-label">Book Your Stay</p>
+                          <div class="book-buttons">
+                            <a class="btn-glass btn-whatsapp" href="https://wa.me/916900571068" target="_blank">
+                              💬 WhatsApp
+                            </a>
+                            <a class="btn-glass btn-call" href="tel:+916900571068">
+                              📞 Call Now
+                            </a>
+                          </div>
+                        </div>
                     </div>
                 </div>
             </div>
