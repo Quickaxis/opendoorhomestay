@@ -1206,7 +1206,8 @@
             font-size: 10px;
             font-weight: 500;
             letter-spacing: 0.3em;
-            color: #C8972B;
+            color: #C8972B !important;
+            opacity: 1 !important;
             text-transform: uppercase;
             display: block;
             margin-bottom: 8px;
@@ -1221,7 +1222,8 @@
             font-family: 'Cormorant Garamond', serif;
             font-size: 52px;
             font-weight: 300;
-            color: #F2EDE4;
+            color: #F2EDE4 !important;
+            opacity: 1 !important;
             margin-bottom: 16px;
         }
 
@@ -1229,11 +1231,13 @@
             left: 0;
             transform: none;
             width: 60px;
+            background: #C8972B !important;
+            opacity: 1 !important;
         }
 
         .info-item {
             padding: 20px 0;
-            border-bottom: 1px solid rgba(200,151,43,0.1);
+            border-bottom: 1px solid rgba(200,151,43,0.2) !important;
             display: block;
         }
 
@@ -1242,11 +1246,12 @@
         }
 
         .info-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 10px;
-            font-weight: 600;
-            letter-spacing: 0.25em;
-            color: #C8972B;
+            font-family: 'Montserrat', sans-serif !important;
+            font-size: 10px !important;
+            font-weight: 700 !important;
+            letter-spacing: 0.25em !important;
+            color: #C8972B !important;
+            opacity: 1 !important;
             text-transform: uppercase;
             margin-bottom: 8px;
             display: block;
@@ -1254,31 +1259,35 @@
 
         .info-value {
             font-family: 'DM Sans', sans-serif;
-            font-size: 15px;
+            font-size: 15px !important;
             font-weight: 300;
-            color: #C8B89A;
-            line-height: 1.7;
+            color: #F2EDE4 !important;
+            opacity: 1 !important;
+            line-height: 1.7 !important;
             display: block;
         }
 
         .btn-whatsapp-contact {
             display: inline-block;
-            background: transparent;
-            border: 1px solid rgba(200,151,43,0.4);
-            color: #C8972B;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.2em;
-            padding: 14px 32px;
+            background: transparent !important;
+            border: 1px solid #C8972B !important;
+            color: #C8972B !important;
+            opacity: 1 !important;
+            padding: 14px 32px !important;
             margin-top: 32px;
+            font-family: 'Montserrat', sans-serif !important;
+            font-size: 11px !important;
+            font-weight: 700 !important;
+            letter-spacing: 0.2em !important;
+            border-radius: 0 !important;
             text-transform: uppercase;
             transition: all 0.3s ease;
         }
 
         .btn-whatsapp-contact:hover {
-            background: rgba(200,151,43,0.1);
-            border-color: rgba(200,151,43,0.6);
+            background: #C8972B !important;
+            color: #0E0E0E !important;
+            border-color: #C8972B !important;
         }
 
         .location-map-wrapper {
@@ -1291,8 +1300,8 @@
 
         /* --- Footer --- */
         footer {
-            background: #0A0A0A;
-            border-top: 1px solid rgba(200,151,43,0.15);
+            background: #0A0A0A !important;
+            border-top: 1px solid rgba(200,151,43,0.2) !important;
         }
 
         .footer-strip {
@@ -1319,17 +1328,22 @@
             font-family: 'DM Sans', sans-serif;
             font-size: 13px;
             font-weight: 300;
-            color: #666;
+            color: #888 !important;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-strip:hover .footer-item span {
+            color: #F2EDE4 !important;
         }
 
         .footer-bottom {
-            background: #080808;
+            background: #080808 !important;
             padding: 16px;
             text-align: center;
             font-family: 'DM Sans', sans-serif;
             font-size: 12px;
             font-weight: 300;
-            color: #333;
+            color: #444 !important;
             letter-spacing: 0.02em;
         }
 
@@ -2224,14 +2238,16 @@
             </div>
 
             <div class="location-map-wrapper">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3534.5!2d94.9!3d27.47!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3742b787b8888889%3A0x1!2sNaliapool%2C+Dibrugarh%2C+Assam!5e0!3m2!1sen!2sin!4v1"
-                    width="100%"
-                    height="420"
-                    style="border:none; border-radius:4px; filter: grayscale(20%) contrast(1.1);"
-                    allowfullscreen=""
-                    loading="lazy">
-                </iframe>
+                <a href="https://maps.google.com/?q=Naliapool,Dibrugarh,Assam" target="_blank" style="display:block;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3534.5!2d94.9!3d27.47!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3742b787b8888889%3A0x1!2sNaliapool%2C+Dibrugarh%2C+Assam!5e0!3m2!1sen!2sin!4v1"
+                        width="100%"
+                        height="420"
+                        style="border:none; border-radius:4px; filter: grayscale(20%) contrast(1.1); pointer-events: none;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </a>
             </div>
         </div>
     </section>
