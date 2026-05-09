@@ -602,32 +602,38 @@
             font-family: 'Montserrat', sans-serif;
             font-size: 10px;
             font-weight: 700;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.25em;
+            color: #C8972B;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
             text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 12px;
         }
 
         .room-facilities {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 16px;
             margin-bottom: 24px;
         }
 
         .facility-item {
             display: flex;
             align-items: center;
-            gap: 6px;
-            font-size: 11px;
-            color: #555;
+            gap: 8px;
             font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            color: #444;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            padding-bottom: 8px;
         }
 
-        .facility-item svg {
-            width: 14px;
-            height: 14px;
-            color: var(--gold);
+        .facility-icon {
+            font-size: 14px;
+            color: #C8972B;
+            flex-shrink: 0;
         }
 
         .btn-whatsapp {
@@ -1584,19 +1590,19 @@
                         <div class="room-price-line">₹1,500/– per night</div>
                         <div class="room-price-detail">Fully private 1BHK · Kitchen · Bathroom · Parking</div>
 
-                        <p class="facilities-label">Our Facilities</p>
+                        <p class="facilities-label"><span style="flex:1; height:1px; background:rgba(200,151,43,0.3);"></span>OUR FACILITIES<span style="flex:1; height:1px; background:rgba(200,151,43,0.3);"></span></p>
                         <div class="room-facilities">
-                            <div class="facility-item"><svg><use xlink:href="#icon-wifi"/></svg> High Speed WiFi</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-tv"/></svg> Smart TV</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-clean"/></svg> Clean Rooms</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-parking"/></svg> Car Parking</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-security"/></svg> 24x7 Security</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-power"/></svg> 24x7 Electricity</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-fridge"/></svg> Personal Refrigerator</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-kitchen"/></svg> Personal Kitchen</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-couple"/></svg> Couple Friendly</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-bathroom"/></svg> Attached Bathroom</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-geyser"/></svg> Instant Geyser</div>
+                            <div class="facility-item"><span class="facility-icon">📶</span> High Speed WiFi</div>
+                            <div class="facility-item"><span class="facility-icon">📺</span> Smart TV</div>
+                            <div class="facility-item"><span class="facility-icon">🧹</span> Clean Rooms</div>
+                            <div class="facility-item"><span class="facility-icon">🚗</span> Car Parking</div>
+                            <div class="facility-item"><span class="facility-icon">🛡️</span> 24x7 Security</div>
+                            <div class="facility-item"><span class="facility-icon">⚡</span> 24x7 Electricity</div>
+                            <div class="facility-item"><span class="facility-icon">🧊</span> Personal Refrigerator</div>
+                            <div class="facility-item"><span class="facility-icon">🍳</span> Personal Kitchen</div>
+                            <div class="facility-item"><span class="facility-icon">💑</span> Couple Friendly</div>
+                            <div class="facility-item"><span class="facility-icon">🚿</span> Instant Geyser</div>
+                            <div class="facility-item"><span class="facility-icon">🚪</span> Attached Bathroom</div>
                         </div>
                         <a href="https://wa.me/916900571068" class="btn-whatsapp" target="_blank">Book via WhatsApp</a>
                     </div>
@@ -1645,19 +1651,20 @@
                         <div class="room-price-line">₹1,700/– per night</div>
                         <div class="room-price-detail">Fully private 1BHK · Kitchen · Bathroom · Parking</div>
 
-                        <p class="facilities-label">Our Facilities</p>
+                        <p class="facilities-label"><span style="flex:1; height:1px; background:rgba(200,151,43,0.3);"></span>OUR FACILITIES<span style="flex:1; height:1px; background:rgba(200,151,43,0.3);"></span></p>
                         <div class="room-facilities">
-                            <div class="facility-item"><svg><use xlink:href="#icon-wifi"/></svg> High Speed WiFi</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-tv"/></svg> Smart TV</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-ac"/></svg> A/C Rooms</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-clean"/></svg> Clean Rooms</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-parking"/></svg> Car Parking</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-security"/></svg> 24x7 Security</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-power"/></svg> 24x7 Electricity</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-fridge"/></svg> Personal Refrigerator</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-kitchen"/></svg> Personal Kitchen</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-couple"/></svg> Couple Friendly</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-geyser"/></svg> Instant Geyser</div>
+                            <div class="facility-item"><span class="facility-icon">📶</span> High Speed WiFi</div>
+                            <div class="facility-item"><span class="facility-icon">📺</span> Smart TV</div>
+                            <div class="facility-item"><span class="facility-icon">❄️</span> A/C Room</div>
+                            <div class="facility-item"><span class="facility-icon">🧹</span> Clean Rooms</div>
+                            <div class="facility-item"><span class="facility-icon">🚗</span> Car Parking</div>
+                            <div class="facility-item"><span class="facility-icon">🛡️</span> 24x7 Security</div>
+                            <div class="facility-item"><span class="facility-icon">⚡</span> 24x7 Electricity</div>
+                            <div class="facility-item"><span class="facility-icon">🧊</span> Personal Refrigerator</div>
+                            <div class="facility-item"><span class="facility-icon">🍳</span> Personal Kitchen</div>
+                            <div class="facility-item"><span class="facility-icon">💑</span> Couple Friendly</div>
+                            <div class="facility-item"><span class="facility-icon">🚿</span> Instant Geyser</div>
+                            <div class="facility-item"><span class="facility-icon">🚪</span> Attached Bathroom</div>
                         </div>
                         <a href="https://wa.me/916900571068" class="btn-whatsapp" target="_blank">Book via WhatsApp</a>
                     </div>
@@ -1706,19 +1713,20 @@
                         <div class="room-price-line">₹1,800/– per night</div>
                         <div class="room-price-detail">Fully private 1BHK · Kitchen · Bathroom · Parking</div>
 
-                        <p class="facilities-label">Our Facilities</p>
+                        <p class="facilities-label"><span style="flex:1; height:1px; background:rgba(200,151,43,0.3);"></span>OUR FACILITIES<span style="flex:1; height:1px; background:rgba(200,151,43,0.3);"></span></p>
                         <div class="room-facilities">
-                            <div class="facility-item"><svg><use xlink:href="#icon-wifi"/></svg> High Speed WiFi</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-tv"/></svg> Smart TV</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-ac"/></svg> A/C Rooms</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-clean"/></svg> Clean Rooms</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-parking"/></svg> Car Parking</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-security"/></svg> 24x7 Security</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-power"/></svg> 24x7 Electricity</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-fridge"/></svg> Personal Refrigerator</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-kitchen"/></svg> Personal Kitchen</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-couple"/></svg> Couple Friendly</div>
-                            <div class="facility-item"><svg><use xlink:href="#icon-geyser"/></svg> Instant Geyser</div>
+                            <div class="facility-item"><span class="facility-icon">📶</span> High Speed WiFi</div>
+                            <div class="facility-item"><span class="facility-icon">📺</span> Smart TV</div>
+                            <div class="facility-item"><span class="facility-icon">❄️</span> A/C Room</div>
+                            <div class="facility-item"><span class="facility-icon">🧹</span> Clean Rooms</div>
+                            <div class="facility-item"><span class="facility-icon">🚗</span> Car Parking</div>
+                            <div class="facility-item"><span class="facility-icon">🛡️</span> 24x7 Security</div>
+                            <div class="facility-item"><span class="facility-icon">⚡</span> 24x7 Electricity</div>
+                            <div class="facility-item"><span class="facility-icon">🧊</span> Personal Refrigerator</div>
+                            <div class="facility-item"><span class="facility-icon">🍳</span> Personal Kitchen</div>
+                            <div class="facility-item"><span class="facility-icon">💑</span> Couple Friendly</div>
+                            <div class="facility-item"><span class="facility-icon">🚿</span> Instant Geyser</div>
+                            <div class="facility-item"><span class="facility-icon">🚪</span> Attached Bathroom</div>
                         </div>
                         <a href="https://wa.me/916900571068" class="btn-whatsapp" target="_blank">Book via WhatsApp</a>
                     </div>
