@@ -1181,234 +1181,311 @@
             border: 2px solid var(--gold);
         }
 
-        /* --- Architectural Contact & Footer Design --- */
+        /* --- Dark Luxury Contact & Footer Design --- */
         #contact {
-            background: #111111;
-            position: relative;
+            background: radial-gradient(ellipse at 20% 50%, rgba(26,58,92,0.6) 0%, rgba(8,12,20,1) 50%, rgba(8,12,20,1) 100%),
+                        radial-gradient(ellipse at 80% 20%, rgba(200,151,43,0.15) 0%, transparent 60%);
+            padding: 0;
             overflow: hidden;
-            color: #EDE8DF;
+            position: relative;
+            color: #F0EBE3;
         }
 
-        .contact-header-minimal {
-            padding: 110px 100px 80px;
+        #contact::before { /* Orb 1 */
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(45,106,159,0.2) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        #contact::after { /* Orb 2 */
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(200,151,43,0.12) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .contact-header-luxury {
+            padding: 100px 80px 70px;
             text-align: center;
-            border-bottom: 1px solid rgba(184,134,42,0.12);
+            position: relative;
+            z-index: 1;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
         }
 
-        .minimal-label {
+        .luxury-label {
             font-family: 'Montserrat', sans-serif;
-            font-size: 10px;
             font-weight: 500;
+            font-size: 10px;
             letter-spacing: 0.45em;
-            color: #B8862A;
-            margin-bottom: 28px;
+            color: #C8972B;
+            margin-bottom: 24px;
             display: block;
+            text-shadow: 0 0 20px rgba(200,151,43,0.5);
             text-transform: uppercase;
         }
 
-        .contact-header-minimal h1 {
+        .contact-header-luxury h1 {
             line-height: 1.0;
-            margin-bottom: 36px;
+            margin-bottom: 32px;
         }
 
-        .line-primary {
+        .line-lux-primary {
             display: block;
             font-family: 'Cormorant Garamond', serif;
             font-weight: 300;
-            font-size: 76px;
-            color: #EDE8DF;
+            font-size: 78px;
+            color: #F0EBE3;
         }
 
-        .line-secondary {
+        .line-lux-secondary {
             display: block;
             font-family: 'Cormorant Garamond', serif;
             font-weight: 300;
             font-style: italic;
-            font-size: 76px;
-            color: #B8862A;
+            font-size: 78px;
+            color: #C8972B;
+            text-shadow: 0 0 40px rgba(200,151,43,0.3);
         }
 
-        .thin-gold-rule {
-            width: 48px;
+        .glowing-gold-divider {
+            width: 80px;
             height: 1px;
-            background: #B8862A;
-            margin: 36px auto;
-            opacity: 0.6;
+            background: linear-gradient(90deg, transparent, #C8972B, transparent);
+            margin: 32px auto;
+            box-shadow: 0 0 12px rgba(200,151,43,0.6);
         }
 
-        .header-subtext-minimal {
+        .header-subtext-luxury {
             font-family: 'DM Sans', sans-serif;
             font-weight: 300;
             font-size: 16px;
-            color: #7A7268;
+            color: #8896A8;
             line-height: 1.9;
             max-width: 480px;
             margin: 0 auto;
-            letter-spacing: 0.02em;
         }
 
-        .contact-grid-architectural {
+        .contact-grid-luxury {
             display: grid;
-            grid-template-columns: 320px 1fr 320px;
-            border-top: 1px solid rgba(184,134,42,0.1);
+            grid-template-columns: 1fr 1.6fr 1fr;
+            gap: 24px;
+            padding: 60px 60px 80px;
+            position: relative;
+            z-index: 1;
+            align-items: start;
         }
 
-        .col-contact, .col-booking {
-            background: #161616;
-            padding: 64px 48px;
+        .lux-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 24px;
+            padding: 40px 36px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 0 0 1px rgba(200,151,43,0.08),
+                        0 24px 48px rgba(0,0,0,0.4),
+                        inset 0 1px 0 rgba(255,255,255,0.06);
             display: flex;
             flex-direction: column;
         }
 
-        .col-contact {
-            border-right: 1px solid rgba(184,134,42,0.1);
-        }
-
-        .col-booking {
-            border-left: 1px solid rgba(184,134,42,0.1);
-            justify-content: space-between;
-        }
-
-        .col-title {
+        .lux-card-title {
             font-family: 'Montserrat', sans-serif;
-            font-size: 9px;
             font-weight: 700;
-            letter-spacing: 0.4em;
-            color: #B8862A;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-        }
-
-        .contact-item-minimal {
-            padding: 24px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-        }
-
-        .item-label-minimal {
-            font-family: 'Montserrat', sans-serif;
             font-size: 9px;
-            font-weight: 600;
-            letter-spacing: 0.3em;
-            color: #B8862A;
+            letter-spacing: 0.4em;
+            color: #C8972B;
+            margin-bottom: 36px;
             text-transform: uppercase;
-            margin-bottom: 10px;
-            display: block;
         }
 
-        .item-value-minimal {
+        .lux-contact-item {
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .lux-item-label {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 9px;
+            letter-spacing: 0.25em;
+            color: rgba(200,151,43,0.7);
+            margin-bottom: 8px;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        .lux-item-value {
             font-family: 'DM Sans', sans-serif;
             font-weight: 300;
-            font-size: 14px;
-            color: #C8C0B4;
+            font-size: 13px;
+            color: #B8C4D0;
             line-height: 1.8;
             display: block;
         }
 
-        .col-map-cinematic {
-            position: relative;
-            overflow: hidden;
-            background: #0D0D0D;
-            min-height: 520px;
+        .lux-insta-pill {
+            margin-top: 28px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(200,151,43,0.08);
+            border: 1px solid rgba(200,151,43,0.2);
+            border-radius: 50px;
+            padding: 10px 20px;
+            color: #C8972B;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            width: fit-content;
         }
 
-        .col-map-cinematic iframe {
+        .lux-insta-pill:hover {
+            background: rgba(200,151,43,0.15);
+        }
+
+        .lux-map-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 0 0 1px rgba(45,106,159,0.15),
+                        0 32px 64px rgba(0,0,0,0.5),
+                        0 0 80px rgba(45,106,159,0.08);
+            position: relative;
+            min-height: 460px;
+        }
+
+        .lux-map-card iframe {
             width: 100%;
             height: 100%;
+            min-height: 460px;
             border: none;
             display: block;
-            filter: grayscale(100%) brightness(0.25) contrast(1.3);
+            filter: grayscale(100%) brightness(0.2) contrast(1.4) hue-rotate(180deg);
         }
 
-        .map-frame-overlay {
+        .map-glow-overlay {
             position: absolute;
-            inset: 20px;
-            border: 1px solid rgba(184,134,42,0.18);
+            inset: 0;
+            background: linear-gradient(135deg, rgba(45,106,159,0.08) 0%, transparent 50%, rgba(200,151,43,0.05) 100%);
             pointer-events: none;
             z-index: 2;
+            border-radius: 24px;
         }
 
-        .map-label-minimal {
+        .map-gold-frame {
             position: absolute;
-            bottom: 28px;
-            left: 28px;
-            z-index: 5;
-            background: #161616;
-            border: 1px solid rgba(184,134,42,0.2);
-            padding: 16px 20px;
-            border-radius: 0;
+            inset: 12px;
+            border: 1px solid rgba(200,151,43,0.12);
+            border-radius: 16px;
+            pointer-events: none;
+            z-index: 3;
         }
 
-        .map-label-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 15px;
-            font-weight: 600;
-            color: #EDE8DF;
+        .map-pin-lux {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            z-index: 5;
+            background: rgba(8,12,20,0.85);
+            border: 1px solid rgba(200,151,43,0.2);
+            border-radius: 14px;
+            padding: 16px 20px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: space-between;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
-        .map-label-dot {
-            width: 6px;
-            height: 6px;
+        .pin-lux-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .pulsing-gold-dot {
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
-            background: #B8862A;
+            background: #C8972B;
+            box-shadow: 0 0 0 4px rgba(200,151,43,0.2);
+            animation: lux-pulse 2s ease infinite;
+            margin-right: 12px;
+            display: inline-block;
         }
 
-        .map-label-address {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 11px;
-            color: #7A7268;
-            margin-top: 6px;
-            display: block;
+        @keyframes lux-pulse {
+            0%, 100% { box-shadow: 0 0 0 4px rgba(200,151,43,0.2); }
+            50% { box-shadow: 0 0 0 8px rgba(200,151,43,0.05); }
         }
 
-        .map-label-link {
+        .pin-lux-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: 15px;
+            color: #F0EBE3;
+        }
+
+        .pin-lux-link {
             font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
             font-size: 9px;
             letter-spacing: 0.15em;
-            color: #B8862A;
-            margin-top: 12px;
-            display: block;
+            color: #C8972B;
             text-decoration: none;
             text-transform: uppercase;
+            transition: color 0.3s ease;
         }
 
-        .booking-headline-minimal {
+        .pin-lux-link:hover {
+            color: #E8B84B;
+        }
+
+        .lux-booking-headline {
             font-family: 'Cormorant Garamond', serif;
             font-weight: 300;
-            font-size: 32px;
-            color: #EDE8DF;
+            font-size: 34px;
+            color: #F0EBE3;
             line-height: 1.2;
+            margin-bottom: 16px;
         }
 
-        .booking-headline-minimal span {
+        .lux-booking-headline span {
             font-style: italic;
         }
 
-        .booking-body-minimal {
+        .lux-booking-body {
             font-family: 'DM Sans', sans-serif;
             font-weight: 300;
             font-size: 13px;
-            color: #7A7268;
-            line-height: 1.9;
-            margin-top: 20px;
+            color: #8896A8;
+            line-height: 1.8;
+            margin-bottom: 36px;
         }
 
-        .booking-actions-minimal {
-            margin-top: auto;
-            padding-top: 48px;
-            border-top: 1px solid rgba(255,255,255,0.04);
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .btn-minimal {
+        .btn-lux {
             width: 100%;
             font-family: 'Montserrat', sans-serif;
-            letter-spacing: 0.2em;
-            border-radius: 0;
+            letter-spacing: 0.18em;
+            border-radius: 50px;
             cursor: pointer;
             text-align: center;
             text-decoration: none;
@@ -1417,83 +1494,111 @@
             text-transform: uppercase;
         }
 
-        .btn-minimal.whatsapp {
-            padding: 20px 28px;
-            background: #B8862A;
-            color: #0D0D0D;
-            font-weight: 700;
+        .btn-lux.whatsapp {
+            padding: 18px 24px;
+            background: linear-gradient(135deg, #C8972B, #E8B84B);
+            color: #080C14;
+            font-weight: 800;
             font-size: 11px;
             border: none;
+            box-shadow: 0 8px 32px rgba(200,151,43,0.3), 0 0 0 1px rgba(200,151,43,0.2);
         }
 
-        .btn-minimal.whatsapp:hover {
-            background: #D4983A;
+        .btn-lux.whatsapp:hover {
+            box-shadow: 0 12px 40px rgba(200,151,43,0.5), 0 0 0 1px rgba(200,151,43,0.4);
+            transform: translateY(-2px);
         }
 
-        .btn-minimal.call {
-            padding: 18px 28px;
-            background: transparent;
-            color: #C8C0B4;
-            font-weight: 500;
+        .btn-lux.call {
+            padding: 16px 24px;
+            background: rgba(255,255,255,0.04);
+            color: #B8C4D0;
+            border: 1px solid rgba(255,255,255,0.1);
+            font-weight: 600;
             font-size: 11px;
-            border: 1px solid rgba(200,184,154,0.2);
+            margin-top: 12px;
         }
 
-        .btn-minimal.call:hover {
-            border-color: #B8862A;
-            color: #B8862A;
+        .btn-lux.call:hover {
+            border-color: rgba(200,151,43,0.4);
+            color: #C8972B;
+            background: rgba(200,151,43,0.06);
         }
 
-        /* --- Footer Architectural Design --- */
-        .footer-architectural {
-            background: #0D0D0D !important;
-            border-top: 1px solid rgba(184,134,42,0.1) !important;
-            padding: 36px 100px;
+        .lux-rating-block {
+            margin-top: auto;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lux-stars {
+            color: #C8972B;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        .lux-rating-text {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 300;
+            font-size: 12px;
+            color: #8896A8;
+        }
+
+        /* --- Luxury Footer Design --- */
+        .footer-luxury {
+            background: rgba(0,0,0,0.4) !important;
+            border-top: 1px solid rgba(255,255,255,0.05) !important;
+            padding: 32px 80px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
+            z-index: 1;
         }
 
-        .footer-brand {
+        .footer-lux-brand {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 12px;
         }
 
-        .footer-brand img {
-            width: 38px;
-            height: 38px;
+        .footer-lux-brand img {
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             object-fit: cover;
         }
 
-        .footer-brand span {
+        .footer-lux-brand span {
             font-family: 'DM Sans', sans-serif;
+            font-weight: 300;
             font-size: 13px;
             color: #555;
         }
 
-        .footer-copy-minimal {
+        .footer-lux-copy {
             font-family: 'DM Sans', sans-serif;
             font-weight: 300;
             font-size: 11px;
             color: #333;
-            letter-spacing: 0.05em;
         }
 
-        .footer-social-minimal {
+        .footer-lux-socials {
             display: flex;
             gap: 20px;
         }
 
-        .footer-social-minimal a {
+        .footer-lux-socials a {
             color: #444;
-            font-size: 15px;
-            transition: color 0.3s;
+            font-size: 16px;
+            transition: color 0.3s ease;
         }
 
-        .footer-social-minimal a:hover {
-            color: #B8862A;
+        .footer-lux-socials a:hover {
+            color: #C8972B;
         }
 
         /* --- Responsive Media Queries --- */
@@ -1683,35 +1788,35 @@
                 gap: 6px !important;
             }
 
-            /* --- Mobile Architectural Contact & Footer --- */
-            .contact-header-minimal {
-                padding: 70px 28px 56px;
+            /* --- Mobile Luxury Contact & Footer --- */
+            .contact-header-luxury {
+                padding: 70px 24px 50px;
             }
-            .line-primary, .line-secondary {
-                font-size: 48px !important;
+            .line-lux-primary, .line-lux-secondary {
+                font-size: 46px !important;
             }
-            .contact-grid-architectural {
+            .contact-grid-luxury {
                 grid-template-columns: 1fr !important;
+                gap: 16px !important;
+                padding: 24px 20px 60px !important;
             }
-            .col-booking {
+            .lux-card.booking {
                 order: 1 !important;
-                border-left: none !important;
-                padding: 48px 28px !important;
             }
-            .col-map-cinematic {
+            .lux-map-card {
                 order: 2 !important;
                 min-height: 300px !important;
             }
-            .col-contact {
+            .lux-card.contacts {
                 order: 3 !important;
-                padding: 48px 28px !important;
-                border-right: none !important;
-                border-top: 1px solid rgba(184,134,42,0.1) !important;
             }
-            .footer-architectural {
+            .lux-card {
+                padding: 32px 24px !important;
+            }
+            .footer-luxury {
                 flex-direction: column !important;
-                gap: 20px !important;
-                padding: 28px 24px !important;
+                gap: 16px !important;
+                padding: 24px !important;
                 text-align: center !important;
             }
             .footer-item {
@@ -2363,83 +2468,88 @@
 
     <!-- Location Section -->
     <section id="contact">
-        <div class="contact-header-minimal">
-            <span class="minimal-label">NALIAPOOL · DIBRUGARH · ASSAM</span>
+        <div class="contact-header-luxury">
+            <span class="luxury-label">NALIAPOOL · DIBRUGARH · ASSAM</span>
             <h1>
-                <span class="line-primary">We Look Forward to</span>
-                <span class="line-secondary">Welcoming You Home.</span>
+                <span class="line-lux-primary">We Look Forward to</span>
+                <span class="line-lux-secondary">Welcoming You Home.</span>
             </h1>
-            <div class="thin-gold-rule"></div>
-            <p class="header-subtext-minimal">A peaceful stay in the heart of Dibrugarh — where every guest becomes family.</p>
+            <div class="glowing-gold-divider"></div>
+            <p class="header-subtext-luxury">A peaceful stay in the heart of Dibrugarh — where every guest becomes family.</p>
         </div>
 
-        <div class="contact-grid-architectural">
-            <!-- Left Column: Contact Details -->
-            <div class="col-contact">
-                <span class="col-title">REACH US</span>
-                <div class="contact-details-minimal">
-                    <div class="contact-item-minimal">
-                        <span class="item-label-minimal">LOCATION</span>
-                        <span class="item-value-minimal">Sultan Path, Naliapool<br>Dibrugarh, Assam 786001</span>
+        <div class="contact-grid-luxury">
+            <!-- Left Card: Contact Details -->
+            <div class="lux-card contacts">
+                <span class="lux-card-title">REACH US</span>
+                <div class="lux-contact-details">
+                    <div class="lux-contact-item">
+                        <span class="lux-item-label">LOCATION</span>
+                        <span class="lux-item-value">Sultan Path, Naliapool, Dibrugarh, Assam 786001</span>
                     </div>
-                    <div class="contact-item-minimal">
-                        <span class="item-label-minimal">PHONE</span>
-                        <span class="item-value-minimal">+91 6900571068<br>+91 6901876058</span>
+                    <div class="lux-contact-item">
+                        <span class="lux-item-label">PHONE</span>
+                        <span class="lux-item-value">+91 6900571068 / +91 6901876058</span>
                     </div>
-                    <div class="contact-item-minimal">
-                        <span class="item-label-minimal">EMAIL</span>
-                        <span class="item-value-minimal">opendoorhomestay24@gmail.com</span>
+                    <div class="lux-contact-item">
+                        <span class="lux-item-label">EMAIL</span>
+                        <span class="lux-item-value">opendoorhomestay24@gmail.com</span>
                     </div>
-                    <div class="contact-item-minimal">
-                        <span class="item-label-minimal">INSTAGRAM</span>
-                        <span class="item-value-minimal">@opendoorhomestay</span>
+                    <div class="lux-contact-item">
+                        <span class="lux-item-label">INSTAGRAM</span>
+                        <span class="lux-item-value">@opendoorhomestay</span>
                     </div>
                 </div>
+                <a href="https://instagram.com/opendoorhomestay" target="_blank" class="lux-insta-pill">
+                    FOLLOW ON INSTAGRAM
+                </a>
             </div>
 
-            <!-- Center Column: Map -->
-            <div class="col-map-cinematic">
+            <!-- Center Card: Map -->
+            <div class="lux-map-card">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3534.5!2d94.9!3d27.47!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3742b787b8888889%3A0x1!2sNaliapool%2C+Dibrugarh%2C+Assam!5e0!3m2!1sen!2sin!4v1"
                     loading="lazy" allowfullscreen=""></iframe>
-                <div class="map-frame-overlay"></div>
-                <div class="map-label-minimal">
-                    <div class="map-label-name">
-                        <span class="map-label-dot"></span>
-                        The Open Door Homestay
+                <div class="map-glow-overlay"></div>
+                <div class="map-gold-frame"></div>
+                <div class="map-pin-lux">
+                    <div class="pin-lux-left">
+                        <span class="pulsing-gold-dot"></span>
+                        <span class="pin-lux-name">The Open Door Homestay</span>
                     </div>
-                    <span class="map-label-address">Sultan Path, Naliapool, Dibrugarh</span>
-                    <a href="https://maps.google.com/?q=The+Open+Door+Homestay+Naliapool+Dibrugarh" target="_blank" class="map-label-link">VIEW ON GOOGLE MAPS →</a>
+                    <a href="https://maps.google.com/?q=Naliapool,Dibrugarh,Assam" target="_blank" class="pin-lux-link">GET DIRECTIONS →</a>
                 </div>
             </div>
 
-            <!-- Right Column: Booking CTA -->
-            <div class="col-booking">
-                <div class="booking-top">
-                    <span class="col-title">BOOK YOUR STAY</span>
-                    <h2 class="booking-headline-minimal">
+            <!-- Right Card: Booking CTA -->
+            <div class="lux-card booking">
+                <span class="lux-card-title">BOOK YOUR STAY</span>
+                <div class="lux-booking-content">
+                    <h2 class="lux-booking-headline">
                         Ready for a stay<br><span>you'll remember?</span>
                     </h2>
-                    <p class="booking-body-minimal">
-                        Reach out on WhatsApp or call us directly. We respond within minutes and are always happy to help you plan your stay.
+                    <p class="lux-booking-body">
+                        Reach out on WhatsApp or call us directly. We respond within minutes.
                     </p>
+                    <a href="https://wa.me/916900571068" target="_blank" class="btn-lux whatsapp">💬 &nbsp; WHATSAPP US</a>
+                    <a href="tel:+916900571068" class="btn-lux call">📞 &nbsp; CALL NOW</a>
                 </div>
-                <div class="booking-actions-minimal">
-                    <a href="https://wa.me/916900571068" target="_blank" class="btn-minimal whatsapp">RESERVE ON WHATSAPP</a>
-                    <a href="tel:+916900571068" class="btn-minimal call">CALL US DIRECTLY</a>
+                <div class="lux-rating-block">
+                    <div class="lux-stars">★★★★★</div>
+                    <span class="lux-rating-text">4.9 · Highly Rated Stay</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer-architectural">
-        <div class="footer-brand">
+    <footer class="footer-luxury">
+        <div class="footer-lux-brand">
             <img src="logo.jpg" alt="Logo">
             <span>The Open Door Homestay</span>
         </div>
-        <div class="footer-copy-minimal">
+        <div class="footer-lux-copy">
             © 2025 The Open Door Homestay · Dibrugarh, Assam
         </div>
-        <div class="footer-social-minimal">
+        <div class="footer-lux-socials">
             <a href="https://instagram.com/opendoorhomestay" target="_blank">
                 <svg style="width:18px;height:18px;fill:currentColor;"><use xlink:href="#icon-instagram"/></svg>
             </a>
