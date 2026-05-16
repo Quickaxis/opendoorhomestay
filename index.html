@@ -1980,13 +1980,15 @@
             [class*="cta-banner"] {
                 flex-direction: column !important;
                 background: #1B4332 !important;
-                padding: 36px 28px !important;
+                padding: 44px 28px !important;
                 margin: 0 16px !important;
                 width: auto !important;
                 overflow: hidden !important;
-                border-radius: 16px !important;
+                border-radius: 24px !important;
                 box-sizing: border-box !important;
-                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+                box-shadow: 0 12px 48px rgba(0, 0, 0, 0.35) !important;
+                text-align: center !important;
+                align-items: center !important;
             }
 
             /* Left text side */
@@ -1996,7 +1998,10 @@
             .cta-banner>div:first-child {
                 width: 100% !important;
                 margin-bottom: 0 !important;
-                text-align: left !important;
+                text-align: center !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
             }
 
             /* Heading text size */
@@ -2049,31 +2054,38 @@
                 font-size: 12px !important;
                 letter-spacing: 0.15em !important;
                 text-align: center !important;
-                display: block !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
                 box-sizing: border-box !important;
-                border-radius: 0 !important;
+                border-radius: 50px !important;
                 text-transform: uppercase !important;
+                backdrop-filter: blur(25px) !important;
+                -webkit-backdrop-filter: blur(25px) !important;
+                transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
             }
 
             .btn-cta-banner.primary {
-                background: #C8972B !important;
+                background: rgba(200, 151, 43, 0.95) !important;
                 color: #0D0D0D !important;
                 font-weight: 700 !important;
-                border: none !important;
-                margin-bottom: 12px !important;
-                box-shadow: none !important;
+                border: 1px solid rgba(255, 255, 255, 0.2) !important;
+                margin-bottom: 14px !important;
+                box-shadow: 0 8px 24px rgba(200, 151, 43, 0.3),
+                            inset 0 1px 1px rgba(255, 255, 255, 0.3) !important;
             }
 
             .btn-cta-banner.secondary {
-                background: transparent !important;
+                background: rgba(255, 255, 255, 0.08) !important;
                 color: #F0EBE3 !important;
-                border: 1px solid rgba(240, 235, 227, 0.35) !important;
+                border: 1px solid rgba(255, 255, 255, 0.25) !important;
                 font-weight: 600 !important;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2),
+                            inset 0 1px 1px rgba(255, 255, 255, 0.1) !important;
             }
 
-            .btn-cta-banner.secondary:hover {
-                border-color: #C8972B !important;
-                color: #C8972B !important;
+            .btn-cta-banner:active {
+                transform: scale(0.97) !important;
             }
 
             /* Section wrapper outside the card */
