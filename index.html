@@ -1650,76 +1650,130 @@
                 color: #FFFFFF !important;
             }
 
-            /* 1. HERO SECTION - Restored Old Format */
+            /* 1. HERO SECTION MOBILE FIXES */
             #hero {
                 height: 100dvh !important;
                 min-height: 100dvh !important;
                 display: flex !important;
-                align-items: center !important;
-                justify-content: center !important;
+                align-items: flex-end !important;
+                justify-content: flex-start !important;
                 background-position: center center !important;
             }
 
             .hero-overlay {
                 background: linear-gradient(
                     to bottom,
-                    rgba(0,0,0,0.25) 0%,
-                    rgba(0,0,0,0.15) 50%,
-                    rgba(0,0,0,0.45) 100%
+                    rgba(0,0,0,0.2) 0%,
+                    rgba(0,0,0,0.4) 60%,
+                    rgba(0,0,0,0.8) 100%
                 ) !important;
             }
 
             #hero .hero-content {
-                position: relative !important;
-                text-align: center !important;
+                position: absolute !important;
+                bottom: 80px !important;
+                left: 24px !important;
+                right: 24px !important;
+                top: auto !important;
+                text-align: left !important;
                 padding: 0 !important;
                 margin: 0 !important;
                 max-width: none !important;
-                align-items: center !important;
+                align-items: flex-start !important;
                 height: auto !important;
-                bottom: auto !important;
-                left: auto !important;
-                right: auto !important;
+                display: flex !important;
+                flex-direction: column !important;
+                z-index: 20 !important;
             }
 
-            .hero-headline,
-            .hero-subtitle,
-            .ornament-divider,
+            /* Hide unwanted elements */
             .hero-rating-badge, 
             .hero-review-card, 
             .hero-logo-badge, 
             .hero-scroll-indicator,
-            .hero-badge,
-            .floating-review {
+            #hero h1:not(.hero-headline) {
                 display: none !important;
+            }
+
+            .hero-label {
+                font-size: 9px !important;
+                letter-spacing: 0.25em !important;
+                margin-bottom: 12px !important;
+                display: flex !important;
+                align-items: center !important;
+                gap: 8px !important;
+            }
+            .hero-label::before, .hero-label::after {
+                width: 20px !important;
+            }
+
+            .hero-headline {
+                font-size: 44px !important;
+                line-height: 1.05 !important;
+                margin-bottom: 16px !important;
+                text-align: left !important;
+            }
+            .hero-headline .line-1, 
+            .hero-headline .line-2 {
+                font-size: 44px !important;
+                display: block !important;
+            }
+
+            .ornament-divider {
+                margin: 20px 0 !important;
+                width: 100px !important;
+                justify-content: flex-start !important;
+            }
+
+            .hero-subtitle {
+                font-size: 15px !important;
+                line-height: 1.6 !important;
+                color: rgba(240,235,227,0.8) !important;
+                margin-bottom: 28px !important;
+                max-width: none !important;
+                text-align: left !important;
             }
 
             .hero-ctas {
                 display: flex !important;
-                justify-content: center !important;
+                flex-direction: column !important;
+                gap: 0 !important;
                 width: 100% !important;
+                margin-top: 28px !important;
             }
 
-            .hero-ctas .btn-hero {
-                width: auto !important;
-                min-width: 220px !important;
-                background: rgba(255, 255, 255, 0.12) !important;
-                color: #FFFFFF !important;
-                border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
-                backdrop-filter: blur(12px) !important;
-                -webkit-backdrop-filter: blur(12px) !important;
-                padding: 18px 48px !important;
-                font-size: 13px !important;
+            .btn-hero {
+                width: 100% !important;
+                padding: 18px !important;
+                font-family: Montserrat !important;
                 font-weight: 700 !important;
+                font-size: 12px !important;
                 letter-spacing: 0.2em !important;
-                border-radius: 50px !important;
+                border-radius: 0 !important;
                 text-align: center !important;
+                display: block !important;
+                box-sizing: border-box !important;
                 transition: all 0.3s ease !important;
-                display: inline-block !important;
             }
 
-            .hero-ctas .btn-hero:nth-child(2) {
-                display: none !important;
+            /* Primary Button (Explore Rooms) */
+            .btn-hero.primary {
+                background: rgba(30,25,20,0.75) !important;
+                border: 1px solid rgba(200,151,43,0.5) !important;
+                color: #F2EDE4 !important;
+                backdrop-filter: blur(8px) !important;
+                -webkit-backdrop-filter: blur(8px) !important;
+            }
+            .btn-hero.primary:hover {
+                background: rgba(200,151,43,0.2) !important;
+            }
+
+            /* Secondary Button (WhatsApp) */
+            .btn-hero.secondary {
+                background: transparent !important;
+                border: 1px solid rgba(200,151,43,0.6) !important;
+                color: #C8972B !important;
+                margin-top: 12px !important;
             }
 
             /* 2. NAVBAR MOBILE - Floating Look */
@@ -1749,10 +1803,10 @@
                 background: rgba(200, 151, 43, 0.25) !important;
                 border: 1.5px solid rgba(200, 151, 43, 0.7) !important;
                 color: #FFFFFF !important;
-                padding: 14px 28px !important;
-                font-size: 12px !important;
+                padding: 10px 18px !important;
+                font-size: 11px !important;
                 letter-spacing: 0.1em !important;
-                border-radius: 50px !important;
+                border-radius: 0 !important;
                 backdrop-filter: blur(8px) !important;
                 -webkit-backdrop-filter: blur(8px) !important;
                 box-shadow: 0 4px 15px rgba(0,0,0,0.15) !important;
@@ -2027,8 +2081,8 @@
             </div>
             <p class="hero-subtitle">Experience homely warmth, premium comfort, and a peaceful atmosphere in the heart of Assam.</p>
             <div class="hero-ctas">
-                <a href="#rooms" class="btn-hero">EXPLORE NOW</a>
-                <a href="https://wa.me/916900571068" class="btn-hero" target="_blank">WHATSAPP US</a>
+                <a href="#rooms" class="btn-hero primary">EXPLORE ROOMS</a>
+                <a href="https://wa.me/916900571068" class="btn-hero secondary" target="_blank">WHATSAPP US</a>
             </div>
         </div>
 
