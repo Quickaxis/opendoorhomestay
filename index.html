@@ -1181,327 +1181,319 @@
             border: 2px solid var(--gold);
         }
 
-        .gallery-item .placeholder {
-            width: 100%;
-        }        /* --- Location Section (Find Us) --- */
-        /* --- New Contact Section Design --- */
+        /* --- Architectural Contact & Footer Design --- */
         #contact {
-            background: linear-gradient(180deg, #0E0E0E 0%, #111008 50%, #0A0A0A 100%);
-            padding: 0;
+            background: #111111;
+            position: relative;
             overflow: hidden;
-            position: relative;
+            color: #EDE8DF;
         }
 
-        .noise-overlay {
-            position: absolute;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .contact-header {
-            padding: 100px 80px 70px;
+        .contact-header-minimal {
+            padding: 110px 100px 80px;
             text-align: center;
-            position: relative;
-            z-index: 1;
-            border-bottom: 1px solid rgba(200,151,43,0.08);
+            border-bottom: 1px solid rgba(184,134,42,0.12);
         }
 
-        .gold-label {
+        .minimal-label {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
             font-size: 10px;
-            letter-spacing: 0.4em;
-            color: #C8972B;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        .contact-header h1 {
+            font-weight: 500;
+            letter-spacing: 0.45em;
+            color: #B8862A;
             margin-bottom: 28px;
-            line-height: 1.0;
-        }
-
-        .line-thin {
             display: block;
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 300;
-            font-size: 72px;
-            color: #F2EDE4;
-        }
-
-        .line-italic {
-            display: block;
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 300;
-            font-style: italic;
-            font-size: 72px;
-            color: #C8972B;
-        }
-
-        .emotional-subtext {
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 300;
-            font-size: 17px;
-            color: rgba(200,184,154,0.6);
-            line-height: 1.8;
-            max-width: 520px;
-            margin: 0 auto;
-        }
-
-        .contact-grid {
-            position: relative;
-            z-index: 1;
-            display: grid;
-            grid-template-columns: 1fr 1.4fr;
-            min-height: 500px;
-            border-top: 1px solid rgba(200,151,43,0.08);
-        }
-
-        .contact-left {
-            padding: 70px 60px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            border-right: 1px solid rgba(200,151,43,0.08);
-        }
-
-        .contact-details {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-        }
-
-        .contact-row {
-            padding: 22px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .contact-label {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 9px;
-            letter-spacing: 0.3em;
-            color: #C8972B;
             text-transform: uppercase;
         }
 
-        .contact-value {
+        .contact-header-minimal h1 {
+            line-height: 1.0;
+            margin-bottom: 36px;
+        }
+
+        .line-primary {
+            display: block;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            font-size: 76px;
+            color: #EDE8DF;
+        }
+
+        .line-secondary {
+            display: block;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            font-style: italic;
+            font-size: 76px;
+            color: #B8862A;
+        }
+
+        .thin-gold-rule {
+            width: 48px;
+            height: 1px;
+            background: #B8862A;
+            margin: 36px auto;
+            opacity: 0.6;
+        }
+
+        .header-subtext-minimal {
             font-family: 'DM Sans', sans-serif;
             font-weight: 300;
-            font-size: 15px;
-            color: #D4CFC8;
-            line-height: 1.7;
+            font-size: 16px;
+            color: #7A7268;
+            line-height: 1.9;
+            max-width: 480px;
+            margin: 0 auto;
+            letter-spacing: 0.02em;
         }
 
-        .contact-ctas {
-            margin-top: 48px;
+        .contact-grid-architectural {
+            display: grid;
+            grid-template-columns: 320px 1fr 320px;
+            border-top: 1px solid rgba(184,134,42,0.1);
+        }
+
+        .col-contact, .col-booking {
+            background: #161616;
+            padding: 64px 48px;
             display: flex;
             flex-direction: column;
-            gap: 12px;
         }
 
-        .cta-heading {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 400;
-            font-style: italic;
-            font-size: 20px;
-            color: #888;
-            margin-bottom: 16px;
+        .col-contact {
+            border-right: 1px solid rgba(184,134,42,0.1);
         }
 
-        .btn-contact-main {
-            width: 100%;
+        .col-booking {
+            border-left: 1px solid rgba(184,134,42,0.1);
+            justify-content: space-between;
+        }
+
+        .col-title {
             font-family: 'Montserrat', sans-serif;
-            letter-spacing: 0.2em;
-            padding: 20px 32px;
-            border-radius: 0;
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.4em;
+            color: #B8862A;
+            margin-bottom: 40px;
+            text-transform: uppercase;
         }
 
-        .btn-contact-main.whatsapp {
-            background: #C8972B;
-            color: #0E0E0E;
-            font-weight: 800;
-            font-size: 11px;
-            border: none;
-            position: relative;
-            overflow: hidden;
+        .contact-item-minimal {
+            padding: 24px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
         }
 
-        .btn-contact-main.whatsapp:hover {
-            background: linear-gradient(90deg, #C8972B 0%, #E8B84B 50%, #C8972B 100%);
-            background-size: 200% auto;
-            animation: shimmer 1.5s linear infinite;
-        }
-
-        @keyframes shimmer {
-            0% { background-position: -200% center; }
-            100% { background-position: 200% center; }
-        }
-
-        .btn-contact-main.call {
-            background: transparent;
-            color: #F2EDE4;
-            border: 1px solid rgba(242,237,228,0.15);
+        .item-label-minimal {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 9px;
             font-weight: 600;
-            font-size: 11px;
-        }
-
-        .btn-contact-main.call:hover {
-            border-color: #C8972B;
-            color: #C8972B;
-        }
-
-        .contact-right {
-            position: relative;
-            overflow: hidden;
-            background: #0A0A0A;
-        }
-
-        .map-wrapper {
-            width: 100%;
-            height: 100%;
-            min-height: 500px;
-            position: relative;
-        }
-
-        .map-wrapper iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            filter: grayscale(100%) contrast(1.2) brightness(0.35) sepia(20%);
+            letter-spacing: 0.3em;
+            color: #B8862A;
+            text-transform: uppercase;
+            margin-bottom: 10px;
             display: block;
         }
 
-        .map-overlay {
+        .item-value-minimal {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 300;
+            font-size: 14px;
+            color: #C8C0B4;
+            line-height: 1.8;
+            display: block;
+        }
+
+        .col-map-cinematic {
+            position: relative;
+            overflow: hidden;
+            background: #0D0D0D;
+            min-height: 520px;
+        }
+
+        .col-map-cinematic iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+            filter: grayscale(100%) brightness(0.25) contrast(1.3);
+        }
+
+        .map-frame-overlay {
             position: absolute;
-            inset: 24px;
-            border: 1px solid rgba(200,151,43,0.2);
+            inset: 20px;
+            border: 1px solid rgba(184,134,42,0.18);
             pointer-events: none;
             z-index: 2;
         }
 
-        .map-pin-card {
+        .map-label-minimal {
             position: absolute;
-            bottom: 32px;
-            left: 32px;
+            bottom: 28px;
+            left: 28px;
             z-index: 5;
-            background: rgba(14,14,14,0.92);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(200,151,43,0.25);
-            padding: 20px 24px;
-            border-radius: 4px;
-            max-width: 260px;
+            background: #161616;
+            border: 1px solid rgba(184,134,42,0.2);
+            padding: 16px 20px;
+            border-radius: 0;
         }
 
-        .pin-title {
+        .map-label-name {
             font-family: 'Cormorant Garamond', serif;
+            font-size: 15px;
             font-weight: 600;
-            font-size: 16px;
-            color: #F2EDE4;
+            color: #EDE8DF;
             display: flex;
             align-items: center;
+            gap: 10px;
         }
 
-        .gold-dot {
-            width: 8px;
-            height: 8px;
+        .map-label-dot {
+            width: 6px;
+            height: 6px;
             border-radius: 50%;
-            background: #C8972B;
-            display: inline-block;
-            margin-right: 8px;
+            background: #B8862A;
         }
 
-        .pin-address {
+        .map-label-address {
             font-family: 'DM Sans', sans-serif;
-            font-weight: 300;
-            font-size: 12px;
-            color: #888;
+            font-size: 11px;
+            color: #7A7268;
             margin-top: 6px;
+            display: block;
         }
 
-        .pin-link {
+        .map-label-link {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 10px;
+            font-size: 9px;
             letter-spacing: 0.15em;
-            color: #C8972B;
+            color: #B8862A;
             margin-top: 12px;
             display: block;
             text-decoration: none;
-            transition: color 0.3s ease;
+            text-transform: uppercase;
         }
 
-        .pin-link:hover {
-            color: #E8B84B;
+        .booking-headline-minimal {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            font-size: 32px;
+            color: #EDE8DF;
+            line-height: 1.2;
         }
 
-        /* --- Footer Strip Design --- */
-        footer {
-            background: #080808 !important;
-            border-top: 1px solid rgba(200,151,43,0.08) !important;
+        .booking-headline-minimal span {
+            font-style: italic;
         }
 
-        .footer-strip {
-            padding: 32px 80px;
+        .booking-body-minimal {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 300;
+            font-size: 13px;
+            color: #7A7268;
+            line-height: 1.9;
+            margin-top: 20px;
+        }
+
+        .booking-actions-minimal {
+            margin-top: auto;
+            padding-top: 48px;
+            border-top: 1px solid rgba(255,255,255,0.04);
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
+            flex-direction: column;
             gap: 12px;
         }
 
-        .footer-logo img {
-            width: 40px;
-            height: 40px;
+        .btn-minimal {
+            width: 100%;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.2em;
+            border-radius: 0;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .btn-minimal.whatsapp {
+            padding: 20px 28px;
+            background: #B8862A;
+            color: #0D0D0D;
+            font-weight: 700;
+            font-size: 11px;
+            border: none;
+        }
+
+        .btn-minimal.whatsapp:hover {
+            background: #D4983A;
+        }
+
+        .btn-minimal.call {
+            padding: 18px 28px;
+            background: transparent;
+            color: #C8C0B4;
+            font-weight: 500;
+            font-size: 11px;
+            border: 1px solid rgba(200,184,154,0.2);
+        }
+
+        .btn-minimal.call:hover {
+            border-color: #B8862A;
+            color: #B8862A;
+        }
+
+        /* --- Footer Architectural Design --- */
+        .footer-architectural {
+            background: #0D0D0D !important;
+            border-top: 1px solid rgba(184,134,42,0.1) !important;
+            padding: 36px 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .footer-brand img {
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             object-fit: cover;
         }
 
-        .footer-logo span {
+        .footer-brand span {
             font-family: 'DM Sans', sans-serif;
-            font-weight: 300;
             font-size: 13px;
-            color: #444;
+            color: #555;
         }
 
-        .footer-copyright {
+        .footer-copy-minimal {
             font-family: 'DM Sans', sans-serif;
             font-weight: 300;
-            font-size: 12px;
+            font-size: 11px;
             color: #333;
-            text-align: center;
+            letter-spacing: 0.05em;
         }
 
-        .footer-socials {
+        .footer-social-minimal {
             display: flex;
             gap: 20px;
         }
 
-        .footer-socials a {
-            color: #555;
-            font-size: 16px;
-            transition: color 0.3s ease;
+        .footer-social-minimal a {
+            color: #444;
+            font-size: 15px;
+            transition: color 0.3s;
         }
 
-        .footer-socials a:hover {
-            color: #C8972B;
+        .footer-social-minimal a:hover {
+            color: #B8862A;
         }
 
         /* --- Responsive Media Queries --- */
@@ -1691,35 +1683,32 @@
                 gap: 6px !important;
             }
 
-            /* 8. NEW CONTACT SECTION MOBILE */
-            .contact-header {
-                padding: 70px 28px 50px;
+            /* --- Mobile Architectural Contact & Footer --- */
+            .contact-header-minimal {
+                padding: 70px 28px 56px;
             }
-            .line-thin, .line-italic {
-                font-size: 44px !important;
+            .line-primary, .line-secondary {
+                font-size: 48px !important;
             }
-            .contact-grid {
+            .contact-grid-architectural {
                 grid-template-columns: 1fr !important;
             }
-            .contact-left {
+            .col-booking {
+                order: 1 !important;
+                border-left: none !important;
+                padding: 48px 28px !important;
+            }
+            .col-map-cinematic {
+                order: 2 !important;
+                min-height: 300px !important;
+            }
+            .col-contact {
+                order: 3 !important;
                 padding: 48px 28px !important;
                 border-right: none !important;
-                border-bottom: 1px solid rgba(200,151,43,0.08) !important;
+                border-top: 1px solid rgba(184,134,42,0.1) !important;
             }
-            .contact-right {
-                min-height: 320px !important;
-                order: -1 !important;
-            }
-            .map-wrapper {
-                min-height: 320px !important;
-            }
-            .map-pin-card {
-                bottom: 16px !important;
-                left: 16px !important;
-                max-width: 220px !important;
-                padding: 14px 18px !important;
-            }
-            .footer-strip {
+            .footer-architectural {
                 flex-direction: column !important;
                 gap: 20px !important;
                 padding: 28px 24px !important;
@@ -1727,86 +1716,6 @@
             }
             .footer-item {
                 justify-content: center !important;
-            }
-
-            /* --- Banner Fixes (Mobile) --- */
-            .facilities-cta-banner,
-            .warm-hospitality-banner,
-            .cta-banner {
-                flex-direction: column !important;
-                padding: 36px 28px !important;
-                gap: 28px !important;
-                border-radius: 12px !important;
-                margin: 0 20px !important;
-                width: auto !important;
-                background: #1B4332 !important; /* Ensuring background is green */
-            }
-
-            .banner-left,
-            .cta-left {
-                width: 100% !important;
-                text-align: left !important;
-                flex: none !important;
-            }
-
-            .cta-text h3 {
-                font-size: 32px !important;
-                line-height: 1.1 !important;
-                color: #F2EDE4 !important;
-            }
-
-            .cta-text h3 span {
-                font-size: 32px !important;
-                color: #C8972B !important;
-            }
-
-            .cta-subtext {
-                font-size: 13px !important;
-                color: rgba(200,184,154,0.7) !important;
-                margin-top: 8px !important;
-            }
-
-            .banner-right,
-            .cta-right {
-                width: 100% !important;
-                display: flex !important;
-                flex-direction: column !important;
-                gap: 12px !important;
-                flex: none !important;
-            }
-
-            .btn-cta-banner.primary {
-                width: 100% !important;
-                padding: 16px !important;
-                font-size: 12px !important;
-                border-radius: 0 !important;
-                background: #C8972B !important;
-                color: #0E0E0E !important;
-                border: none !important;
-                text-align: center !important;
-                white-space: nowrap !important;
-                overflow: hidden !important;
-                box-shadow: none !important;
-            }
-
-            .btn-cta-banner.secondary {
-                width: 100% !important;
-                padding: 16px !important;
-                font-size: 12px !important;
-                border-radius: 0 !important;
-                background: transparent !important;
-                color: #F2EDE4 !important;
-                border: 1px solid rgba(242,237,228,0.3) !important;
-                text-align: center !important;
-                white-space: nowrap !important;
-                overflow: hidden !important;
-                box-shadow: none !important;
-            }
-
-            /* SECTION WRAPPER around the banner */
-            #facilities {
-                padding: 40px 0 !important;
-                background: #F2EDE4 !important;
             }
         }
 
@@ -2454,90 +2363,89 @@
 
     <!-- Location Section -->
     <section id="contact">
-        <div class="noise-overlay"></div>
-        
-        <div class="contact-header">
-            <span class="gold-label">DIBRUGARH, ASSAM · INDIA</span>
+        <div class="contact-header-minimal">
+            <span class="minimal-label">NALIAPOOL · DIBRUGARH · ASSAM</span>
             <h1>
-                <span class="line-thin">We Look Forward to</span>
-                <span class="line-italic">Welcoming You Home.</span>
+                <span class="line-primary">We Look Forward to</span>
+                <span class="line-secondary">Welcoming You Home.</span>
             </h1>
-            <div class="ornament-divider">
-                <div class="line"></div>
-                <div class="diamond"></div>
-                <div class="line"></div>
-            </div>
-            <p class="emotional-subtext">A peaceful stay in the heart of Dibrugarh — where every guest becomes family.</p>
+            <div class="thin-gold-rule"></div>
+            <p class="header-subtext-minimal">A peaceful stay in the heart of Dibrugarh — where every guest becomes family.</p>
         </div>
 
-        <div class="contact-grid">
-            <div class="contact-left">
-                <div class="contact-details">
-                    <div class="contact-row">
-                        <span class="contact-label">LOCATION</span>
-                        <span class="contact-value">Sultan Path, Naliapool, Dibrugarh, Assam 786001</span>
+        <div class="contact-grid-architectural">
+            <!-- Left Column: Contact Details -->
+            <div class="col-contact">
+                <span class="col-title">REACH US</span>
+                <div class="contact-details-minimal">
+                    <div class="contact-item-minimal">
+                        <span class="item-label-minimal">LOCATION</span>
+                        <span class="item-value-minimal">Sultan Path, Naliapool<br>Dibrugarh, Assam 786001</span>
                     </div>
-                    <div class="contact-row">
-                        <span class="contact-label">PHONE</span>
-                        <span class="contact-value">+91 6900571068 / +91 6901876058</span>
+                    <div class="contact-item-minimal">
+                        <span class="item-label-minimal">PHONE</span>
+                        <span class="item-value-minimal">+91 6900571068<br>+91 6901876058</span>
                     </div>
-                    <div class="contact-row">
-                        <span class="contact-label">EMAIL</span>
-                        <span class="contact-value">opendoorhomestay24@gmail.com</span>
+                    <div class="contact-item-minimal">
+                        <span class="item-label-minimal">EMAIL</span>
+                        <span class="item-value-minimal">opendoorhomestay24@gmail.com</span>
                     </div>
-                    <div class="contact-row">
-                        <span class="contact-label">INSTAGRAM</span>
-                        <span class="contact-value">@opendoorhomestay</span>
+                    <div class="contact-item-minimal">
+                        <span class="item-label-minimal">INSTAGRAM</span>
+                        <span class="item-value-minimal">@opendoorhomestay</span>
                     </div>
-                </div>
-
-                <div class="contact-ctas">
-                    <p class="cta-heading">Ready to book your stay?</p>
-                    <a href="https://wa.me/916900571068" target="_blank" class="btn-contact-main whatsapp">
-                        💬 &nbsp; RESERVE ON WHATSAPP
-                    </a>
-                    <a href="tel:+916900571068" class="btn-contact-main call">
-                        📞 &nbsp; CALL NOW
-                    </a>
                 </div>
             </div>
 
-            <div class="contact-right">
-                <div class="map-wrapper">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3534.5!2d94.9!3d27.47!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3742b787b8888889%3A0x1!2sNaliapool%2C+Dibrugarh%2C+Assam!5e0!3m2!1sen!2sin!4v1"
-                        loading="lazy" allowfullscreen=""></iframe>
-                    <div class="map-overlay"></div>
-                    <div class="map-pin-card">
-                        <div class="pin-title">
-                            <span class="gold-dot"></span>
-                            The Open Door Homestay
-                        </div>
-                        <p class="pin-address">Sultan Path, Naliapool, Dibrugarh</p>
-                        <a href="https://maps.google.com/?q=Naliapool,Dibrugarh,Assam" target="_blank" class="pin-link">GET DIRECTIONS →</a>
+            <!-- Center Column: Map -->
+            <div class="col-map-cinematic">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3534.5!2d94.9!3d27.47!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3742b787b8888889%3A0x1!2sNaliapool%2C+Dibrugarh%2C+Assam!5e0!3m2!1sen!2sin!4v1"
+                    loading="lazy" allowfullscreen=""></iframe>
+                <div class="map-frame-overlay"></div>
+                <div class="map-label-minimal">
+                    <div class="map-label-name">
+                        <span class="map-label-dot"></span>
+                        The Open Door Homestay
                     </div>
+                    <span class="map-label-address">Sultan Path, Naliapool, Dibrugarh</span>
+                    <a href="https://maps.google.com/?q=The+Open+Door+Homestay+Naliapool+Dibrugarh" target="_blank" class="map-label-link">VIEW ON GOOGLE MAPS →</a>
+                </div>
+            </div>
+
+            <!-- Right Column: Booking CTA -->
+            <div class="col-booking">
+                <div class="booking-top">
+                    <span class="col-title">BOOK YOUR STAY</span>
+                    <h2 class="booking-headline-minimal">
+                        Ready for a stay<br><span>you'll remember?</span>
+                    </h2>
+                    <p class="booking-body-minimal">
+                        Reach out on WhatsApp or call us directly. We respond within minutes and are always happy to help you plan your stay.
+                    </p>
+                </div>
+                <div class="booking-actions-minimal">
+                    <a href="https://wa.me/916900571068" target="_blank" class="btn-minimal whatsapp">RESERVE ON WHATSAPP</a>
+                    <a href="tel:+916900571068" class="btn-minimal call">CALL US DIRECTLY</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer Strip -->
-    <footer>
-        <div class="footer-strip">
-            <div class="footer-logo">
-                <img src="logo.jpg" alt="The Open Door Homestay">
-                <span>The Open Door Homestay</span>
-            </div>
-            <div class="footer-copyright">
-                © 2025 The Open Door Homestay · All rights reserved.
-            </div>
-            <div class="footer-socials">
-                <a href="https://instagram.com/opendoorhomestay" target="_blank">
-                    <svg style="width:18px;height:18px;fill:currentColor;vertical-align:middle;"><use xlink:href="#icon-instagram"/></svg>
-                </a>
-                <a href="https://wa.me/916900571068" target="_blank">
-                    <svg style="width:18px;height:18px;fill:currentColor;vertical-align:middle;"><use xlink:href="#icon-whatsapp"/></svg>
-                </a>
-            </div>
+    <footer class="footer-architectural">
+        <div class="footer-brand">
+            <img src="logo.jpg" alt="Logo">
+            <span>The Open Door Homestay</span>
+        </div>
+        <div class="footer-copy-minimal">
+            © 2025 The Open Door Homestay · Dibrugarh, Assam
+        </div>
+        <div class="footer-social-minimal">
+            <a href="https://instagram.com/opendoorhomestay" target="_blank">
+                <svg style="width:18px;height:18px;fill:currentColor;"><use xlink:href="#icon-instagram"/></svg>
+            </a>
+            <a href="https://wa.me/916900571068" target="_blank">
+                <svg style="width:18px;height:18px;fill:currentColor;"><use xlink:href="#icon-whatsapp"/></svg>
+            </a>
         </div>
     </footer>
 
