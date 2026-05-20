@@ -193,11 +193,9 @@
         }
 
         .btn-book {
-            background: rgba(200, 151, 43, 0.25);
+            background: rgba(200, 151, 43, 0.92);
             color: #FFFFFF;
             border: 1.5px solid rgba(200, 151, 43, 0.6);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
             border-radius: 50px;
             padding: 14px 28px;
             font-family: 'Montserrat', sans-serif;
@@ -234,6 +232,12 @@
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
+        }
+
+        #hero img, #hero .hero-bg {
+            animation: none;
+            transform: scale(1.02);
+            will-change: transform;
         }
 
         #hero .hero-overlay {
@@ -333,11 +337,9 @@
         }
 
         .btn-hero {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(15, 25, 45, 0.92);
             color: #FFFFFF;
             border: 1px solid rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
             padding: 18px 48px;
             font-family: 'Montserrat', sans-serif;
             font-size: 12px;
@@ -697,9 +699,7 @@
             cursor: pointer;
             border-radius: 50px;
             border: 1px solid rgba(200, 151, 43, 0.4);
-            background: rgba(200, 151, 43, 0.08);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            background: rgba(249, 245, 238, 0.95);
             color: #C8972B;
             transition: all 0.3s ease;
             position: relative;
@@ -724,9 +724,7 @@
             overflow: hidden;
             border: 1px solid rgba(200, 151, 43, 0.3);
             border-top: none;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            background: rgba(255, 255, 255, 0.96);
             animation: dropDown 0.25s ease;
         }
 
@@ -1168,7 +1166,7 @@
         }
 
         .btn-about {
-            background: rgba(200, 151, 43, 0.85);
+            background: rgba(200, 151, 43, 0.95);
             color: white;
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
@@ -1180,8 +1178,6 @@
             cursor: pointer;
             text-transform: uppercase;
             transition: all 0.3s ease;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
             box-shadow: 0 0 20px rgba(200, 151, 43, 0.4);
         }
 
@@ -1331,12 +1327,10 @@
         }
 
         .lux-card {
-            background: rgba(10, 18, 35, 0.7);
+            background: rgba(10, 18, 35, 0.92);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 24px;
             padding: 40px 36px;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
             display: flex;
             flex-direction: column;
         }
@@ -1458,15 +1452,13 @@
             left: 20px;
             right: 20px;
             z-index: 5;
-            background: rgba(8, 12, 20, 0.85);
+            background: rgba(8, 12, 20, 0.95);
             border: 1px solid rgba(200, 151, 43, 0.2);
             border-radius: 14px;
             padding: 16px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
             pointer-events: auto;
         }
 
@@ -1481,20 +1473,18 @@
             border-radius: 50%;
             background: #C8972B;
             box-shadow: 0 0 0 4px rgba(200, 151, 43, 0.2);
-            animation: lux-pulse 2s ease infinite;
+            animation: pulse 3s ease infinite;
             margin-right: 12px;
             display: inline-block;
         }
 
-        @keyframes lux-pulse {
-
-            0%,
-            100% {
-                box-shadow: 0 0 0 4px rgba(200, 151, 43, 0.2);
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
             }
 
             50% {
-                box-shadow: 0 0 0 8px rgba(200, 151, 43, 0.05);
+                opacity: 0.5;
             }
         }
 
@@ -1827,11 +1817,9 @@
 
             /* Primary Button (Explore Rooms) */
             .btn-hero.primary {
-                background: rgba(255, 255, 255, 0.04) !important;
+                background: rgba(15, 25, 45, 0.92) !important;
                 border: 1px solid rgba(255, 255, 255, 0.2) !important;
                 color: #FFFFFF !important;
-                backdrop-filter: blur(25px) !important;
-                -webkit-backdrop-filter: blur(25px) !important;
                 box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
                             0 0 40px rgba(255, 255, 255, 0.05),
                             inset 0 1px 1px rgba(255, 255, 255, 0.1) !important;
@@ -1849,11 +1837,9 @@
 
             /* Secondary Button (WhatsApp) */
             .btn-hero.secondary {
-                background: rgba(200, 151, 43, 0.08) !important;
+                background: rgba(200, 151, 43, 0.92) !important;
                 border: 1px solid rgba(200, 151, 43, 0.35) !important;
                 color: #C8972B !important;
-                backdrop-filter: blur(25px) !important;
-                -webkit-backdrop-filter: blur(25px) !important;
                 box-shadow: 0 8px 32px rgba(200, 151, 43, 0.15),
                             0 0 40px rgba(200, 151, 43, 0.05),
                             inset 0 1px 1px rgba(200, 151, 43, 0.1) !important;
@@ -1899,7 +1885,7 @@
             }
 
             .btn-book {
-                background: rgba(200, 151, 43, 0.2) !important;
+                background: rgba(200, 151, 43, 0.92) !important;
                 border: 1px solid rgba(200, 151, 43, 0.5) !important;
                 color: #F2EDE4 !important;
                 padding: 10px 20px !important;
@@ -1907,8 +1893,6 @@
                 font-weight: 700 !important;
                 letter-spacing: 0.1em !important;
                 border-radius: 50px !important;
-                backdrop-filter: blur(12px) !important;
-                -webkit-backdrop-filter: blur(12px) !important;
                 box-shadow: 0 4px 16px rgba(200, 151, 43, 0.15) !important;
             }
 
@@ -2060,8 +2044,6 @@
                 box-sizing: border-box !important;
                 border-radius: 50px !important;
                 text-transform: uppercase !important;
-                backdrop-filter: blur(25px) !important;
-                -webkit-backdrop-filter: blur(25px) !important;
                 transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
             }
 
@@ -2540,35 +2522,35 @@
                         <div class="room-type-badge">Boutique</div>
                         <div class="room-slides">
                             <div class="room-slide active">
-                                <img src="white lotus/1st image.jpeg" alt="White Lotus Room - 1"
+                                <img src="white lotus/1st image.jpeg" alt="White Lotus Room - 1" loading="eager"
                                     style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
                             </div>
                             <div class="room-slide">
-                                <img src="white lotus/2nd image.jpeg" alt="White Lotus Room - 2"
+                                <img src="white lotus/2nd image.jpeg" alt="White Lotus Room - 2" loading="lazy"
                                     style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
                             </div>
                             <div class="room-slide">
-                                <img src="white lotus/3rd image.jpeg" alt="White Lotus Room - 3"
+                                <img src="white lotus/3rd image.jpeg" alt="White Lotus Room - 3" loading="lazy"
                                     style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
                             </div>
                             <div class="room-slide">
-                                <img src="white lotus/4th image.jpeg" alt="White Lotus Room - 4"
+                                <img src="white lotus/4th image.jpeg" alt="White Lotus Room - 4" loading="lazy"
                                     style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
                             </div>
                             <div class="room-slide">
-                                <img src="white lotus/5th image.jpeg" alt="White Lotus Room - 5"
+                                <img src="white lotus/5th image.jpeg" alt="White Lotus Room - 5" loading="lazy"
                                     style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
                             </div>
                             <div class="room-slide">
-                                <img src="white lotus/6th image.jpeg" alt="White Lotus Room - 6"
+                                <img src="white lotus/6th image.jpeg" alt="White Lotus Room - 6" loading="lazy"
                                     style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
                             </div>
                             <div class="room-slide">
-                                <img src="white lotus/7th image.jpeg" alt="White Lotus Room - 7"
+                                <img src="white lotus/7th image.jpeg" alt="White Lotus Room - 7" loading="lazy"
                                     style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
                             </div>
                             <div class="room-slide">
-                                <img src="white lotus/8th image.jpeg" alt="White Lotus Room - 8"
+                                <img src="white lotus/8th image.jpeg" alt="White Lotus Room - 8" loading="lazy"
                                     style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
                             </div>
                         </div>
@@ -2638,39 +2620,39 @@
                         <div class="room-type-badge">Luxury</div>
                         <div class="room-slides">
                             <div class="room-slide active">
-                                <img src="blue lilly room photos/bl-1.jpg" alt="Blue Lilly Room" style="width:100%;height:100%;object-fit:cover;
+                                <img src="blue lilly room photos/bl-1.jpg" alt="Blue Lilly Room" loading="eager" style="width:100%;height:100%;object-fit:cover;
                                 object-position:center;display:block;">
                             </div>
                             <div class="room-slide">
-                                <img src="blue lilly room photos/bl-2.jpg" alt="Blue Lilly Room" style="width:100%;height:100%;object-fit:cover;
+                                <img src="blue lilly room photos/bl-2.jpg" alt="Blue Lilly Room" loading="lazy" style="width:100%;height:100%;object-fit:cover;
                                 object-position:center;display:block;">
                             </div>
                             <div class="room-slide">
-                                <img src="blue lilly room photos/bl-3.jpg" alt="Blue Lilly Room" style="width:100%;height:100%;object-fit:cover;
+                                <img src="blue lilly room photos/bl-3.jpg" alt="Blue Lilly Room" loading="lazy" style="width:100%;height:100%;object-fit:cover;
                                 object-position:center;display:block;">
                             </div>
                             <div class="room-slide">
-                                <img src="blue lilly room photos/bl-4.jpg" alt="Blue Lilly Room" style="width:100%;height:100%;object-fit:cover;
+                                <img src="blue lilly room photos/bl-4.jpg" alt="Blue Lilly Room" loading="lazy" style="width:100%;height:100%;object-fit:cover;
                                 object-position:center;display:block;">
                             </div>
                             <div class="room-slide">
-                                <img src="blue lilly room photos/bl-5.jpg" alt="Blue Lilly Room" style="width:100%;height:100%;object-fit:cover;
+                                <img src="blue lilly room photos/bl-5.jpg" alt="Blue Lilly Room" loading="lazy" style="width:100%;height:100%;object-fit:cover;
                                 object-position:center;display:block;">
                             </div>
                             <div class="room-slide">
-                                <img src="blue lilly room photos/bl-6.jpg" alt="Blue Lilly Room" style="width:100%;height:100%;object-fit:cover;
+                                <img src="blue lilly room photos/bl-6.jpg" alt="Blue Lilly Room" loading="lazy" style="width:100%;height:100%;object-fit:cover;
                                 object-position:center;display:block;">
                             </div>
                             <div class="room-slide">
-                                <img src="blue lilly room photos/bl-7.jpg" alt="Blue Lilly Room" style="width:100%;height:100%;object-fit:cover;
+                                <img src="blue lilly room photos/bl-7.jpg" alt="Blue Lilly Room" loading="lazy" style="width:100%;height:100%;object-fit:cover;
                                 object-position:center;display:block;">
                             </div>
                             <div class="room-slide">
-                                <img src="blue lilly room photos/bl-8.jpg" alt="Blue Lilly Room" style="width:100%;height:100%;object-fit:cover;
+                                <img src="blue lilly room photos/bl-8.jpg" alt="Blue Lilly Room" loading="lazy" style="width:100%;height:100%;object-fit:cover;
                                 object-position:center;display:block;">
                             </div>
                             <div class="room-slide">
-                                <img src="blue lilly room photos/bl-9.jpg" alt="Blue Lilly Room" style="width:100%;height:100%;object-fit:cover;
+                                <img src="blue lilly room photos/bl-9.jpg" alt="Blue Lilly Room" loading="lazy" style="width:100%;height:100%;object-fit:cover;
                                 object-position:center;display:block;">
                             </div>
                         </div>
@@ -2743,57 +2725,57 @@
                         <div class="room-slides">
                             <div class="room-slide active">
                                 <img src="rose gold room photos/29aee921-fdf6-41e9-935e-328e25f23c3f.jpg"
-                                    alt="Rose Gold Room - 1"
+                                    alt="Rose Gold Room - 1" loading="eager"
                                     style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
                             </div>
                             <div class="room-slide">
                                 <img src="rose gold room photos/249ae2ca-e5e9-40b8-8bf8-b805a9efb20c.jpg"
-                                    alt="Rose Gold Room - 2"
+                                    alt="Rose Gold Room - 2" loading="lazy"
                                     style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
                             </div>
                             <div class="room-slide">
                                 <img src="rose gold room photos/30c03816-c564-43f9-88ad-ddf917f67766.jpg"
-                                    alt="Rose Gold Room - 3"
+                                    alt="Rose Gold Room - 3" loading="lazy"
                                     style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
                             </div>
                             <div class="room-slide">
                                 <img src="rose gold room photos/7b32ee96-b05a-4f54-b733-719dcbc6a353.jpg"
-                                    alt="Rose Gold Room - 4"
+                                    alt="Rose Gold Room - 4" loading="lazy"
                                     style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
                             </div>
                             <div class="room-slide">
                                 <img src="rose gold room photos/a2d3ff4e-fe9b-452d-bbae-e023222bde70.jpg"
-                                    alt="Rose Gold Room - 5"
+                                    alt="Rose Gold Room - 5" loading="lazy"
                                     style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
                             </div>
                             <div class="room-slide">
                                 <img src="rose gold room photos/bd59c4f6-a300-4127-a8fe-2a9a7696e90b.jpg"
-                                    alt="Rose Gold Room - 6"
+                                    alt="Rose Gold Room - 6" loading="lazy"
                                     style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
                             </div>
                             <div class="room-slide">
                                 <img src="rose gold room photos/f66d9e87-64be-4261-b4d2-d120e987ca48.jpg"
-                                    alt="Rose Gold Room - 7"
+                                    alt="Rose Gold Room - 7" loading="lazy"
                                     style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
                             </div>
                             <div class="room-slide">
                                 <img src="rose gold room photos/f93f720c-a471-46aa-92de-525d6d599e09.jpg"
-                                    alt="Rose Gold Room - 8"
+                                    alt="Rose Gold Room - 8" loading="lazy"
                                     style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
                             </div>
                             <div class="room-slide">
                                 <img src="rose gold room photos/7a0c74cc-269a-4c9d-b999-e43653be7ba2.jpg"
-                                    alt="Rose Gold Room - 9"
+                                    alt="Rose Gold Room - 9" loading="lazy"
                                     style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
                             </div>
                             <div class="room-slide">
                                 <img src="rose gold room photos/2ba44e9c-6da7-462c-b586-004e2e9b2327.jpg"
-                                    alt="Rose Gold Room - 10"
+                                    alt="Rose Gold Room - 10" loading="lazy"
                                     style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
                             </div>
                             <div class="room-slide">
                                 <img src="rose gold room photos/dc3a4dfd-e4bf-4f01-b29e-ad03bad4d52d.jpg"
-                                    alt="Rose Gold Room - 11"
+                                    alt="Rose Gold Room - 11" loading="lazy"
                                     style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
                             </div>
                         </div>
@@ -3190,21 +3172,26 @@
         // Navbar scroll behavior
         let lastScrollTop = 0;
         const navbar = document.getElementById('navbar');
+        let scrollTimer;
 
         window.addEventListener('scroll', () => {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTimer) return;
+            scrollTimer = setTimeout(() => {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-            if (scrollTop < 50) {
-                navbar.classList.remove('scroll-up', 'scroll-down');
-            } else if (scrollTop > lastScrollTop && scrollTop > 100) {
-                navbar.classList.remove('scroll-up');
-                navbar.classList.add('scroll-down');
-            } else {
-                navbar.classList.remove('scroll-down');
-                navbar.classList.add('scroll-up');
-            }
+                if (scrollTop < 50) {
+                    navbar.classList.remove('scroll-up', 'scroll-down');
+                } else if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    navbar.classList.remove('scroll-up');
+                    navbar.classList.add('scroll-down');
+                } else {
+                    navbar.classList.remove('scroll-down');
+                    navbar.classList.add('scroll-up');
+                }
 
-            lastScrollTop = scrollTop;
+                lastScrollTop = scrollTop;
+                scrollTimer = null;
+            }, 16);
         });
 
         // Smooth scroll
@@ -3253,6 +3240,7 @@
             const nextBtn = card.querySelector('.next');
             const prevBtn = card.querySelector('.prev');
             let currentSlide = 0;
+            let carouselTimer = null;
 
             const updateCarousel = () => {
                 slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
@@ -3261,22 +3249,54 @@
                 });
             };
 
+            const nextSlide = () => {
+                currentSlide = (currentSlide + 1) % dots.length;
+                updateCarousel();
+            };
+
+            const resetAutoplay = () => {
+                if (carouselTimer) {
+                    clearInterval(carouselTimer);
+                    carouselTimer = setInterval(() => nextSlide(), 4000);
+                }
+            };
+
             nextBtn.addEventListener('click', () => {
                 currentSlide = (currentSlide + 1) % dots.length;
                 updateCarousel();
+                resetAutoplay();
             });
 
             prevBtn.addEventListener('click', () => {
                 currentSlide = (currentSlide - 1 + dots.length) % dots.length;
                 updateCarousel();
+                resetAutoplay();
             });
 
             dots.forEach((dot, index) => {
                 dot.addEventListener('click', () => {
                     currentSlide = index;
                     updateCarousel();
+                    resetAutoplay();
                 });
             });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (!carouselTimer) {
+                            carouselTimer = setInterval(() => nextSlide(), 4000);
+                        }
+                    } else {
+                        if (carouselTimer) {
+                            clearInterval(carouselTimer);
+                            carouselTimer = null;
+                        }
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            observer.observe(card);
         });
 
         function toggleBookOptions(btn) {
