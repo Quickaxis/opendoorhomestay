@@ -2321,6 +2321,77 @@
                 transform: translate(-50%, -50%) scale(0) rotate(150deg);
             }
         }
+
+        /* --- Spotlight Glow Card Effect --- */
+        [data-glow] {
+            --border-size: calc(var(--border, 2) * 1px);
+            --spotlight-size: calc(var(--size, 200) * 1px);
+            --hue: calc(var(--base, 210) + (var(--xp, 0) * var(--spread, 0)));
+            --backdrop: rgba(255, 255, 255, 0.88);
+            
+            position: relative;
+            background-color: var(--backdrop) !important;
+            background-image: radial-gradient(
+                var(--spotlight-size) var(--spotlight-size) at
+                calc(var(--x, 0) * 1px)
+                calc(var(--y, 0) * 1px),
+                hsl(var(--hue) calc(var(--saturation, 100) * 1%) calc(var(--lightness, 65) * 1%) / var(--bg-spot-opacity, 0.06)),
+                transparent
+            ) !important;
+            background-size: calc(100% + (2 * var(--border-size))) calc(100% + (2 * var(--border-size))) !important;
+            background-position: 50% 50% !important;
+            background-attachment: fixed !important;
+            border: var(--border-size) solid var(--backup-border, rgba(200, 151, 43, 0.15)) !important;
+        }
+
+        [data-glow]::before,
+        [data-glow]::after {
+            pointer-events: none;
+            content: "";
+            position: absolute;
+            inset: 0;
+            border: var(--border-size) solid transparent;
+            border-radius: calc(var(--radius, 16) * 1px);
+            background-attachment: fixed;
+            background-size: calc(100% + (2 * var(--border-size))) calc(100% + (2 * var(--border-size)));
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0) border-box;
+            -webkit-mask-composite: xor;
+            -webkit-mask-composite: exclude;
+            mask: linear-gradient(#fff 0 0) padding-box exclude, linear-gradient(#fff 0 0) border-box;
+            z-index: 10;
+        }
+        
+        [data-glow]::before {
+            background-image: radial-gradient(
+                calc(var(--spotlight-size) * 0.75) calc(var(--spotlight-size) * 0.75) at
+                calc(var(--x, 0) * 1px)
+                calc(var(--y, 0) * 1px),
+                hsl(var(--hue) calc(var(--saturation, 100) * 1%) calc(var(--lightness, 50) * 1%) / var(--border-spot-opacity, 0)),
+                transparent 100%
+            );
+            filter: brightness(1.8);
+        }
+        
+        [data-glow]::after {
+            background-image: radial-gradient(
+                calc(var(--spotlight-size) * 0.5) calc(var(--spotlight-size) * 0.5) at
+                calc(var(--x, 0) * 1px)
+                calc(var(--y, 0) * 1px),
+                hsl(0 100% 100% / var(--border-light-opacity, 0)),
+                transparent 100%
+            );
+        }
+
+        /* Hover & Active states to show the glow */
+        [data-glow]:hover,
+        [data-glow].glow-active {
+            --bg-spot-opacity: 0.12;
+            --border-spot-opacity: 1;
+            --border-light-opacity: 0.8;
+            border-color: transparent !important;
+        }
     </style>
 </head>
 
@@ -2464,7 +2535,7 @@
 
             <div class="rooms-grid">
                 <!-- Room 1 -->
-                <div class="room-card">
+                <div class="room-card" data-glow data-base="30" data-spread="200">
                     <div class="room-img-area">
                         <div class="room-type-badge">Boutique</div>
                         <div class="room-slides">
@@ -2562,7 +2633,7 @@
                 </div>
 
                 <!-- Room 2 -->
-                <div class="room-card">
+                <div class="room-card" data-glow data-base="220" data-spread="200">
                     <div class="room-img-area">
                         <div class="room-type-badge">Luxury</div>
                         <div class="room-slides">
@@ -2666,7 +2737,7 @@
                 </div>
 
                 <!-- Room 3 -->
-                <div class="room-card">
+                <div class="room-card" data-glow data-base="280" data-spread="300">
                     <div class="room-img-area">
                         <div class="room-type-badge">Premium</div>
                         <div class="room-slides">
@@ -3211,6 +3282,7 @@
         function toggleBookOptions(btn) {
             const dropdown = btn.nextElementSibling;
             const isOpen = dropdown.style.display === 'flex';
+            const parentCard = btn.closest('[data-glow]');
 
             // Close all other open dropdowns first
             document.querySelectorAll('.book-dropdown').forEach(d => {
@@ -3220,12 +3292,18 @@
                 b.classList.remove('active');
                 b.textContent = 'BOOK NOW';
             });
+            document.querySelectorAll('[data-glow]').forEach(c => {
+                c.classList.remove('glow-active');
+            });
 
             if (!isOpen) {
                 dropdown.style.display = 'flex';
                 dropdown.style.flexDirection = 'column';
                 btn.classList.add('active');
                 btn.textContent = '✕  CLOSE';
+                if (parentCard) {
+                    parentCard.classList.add('glow-active');
+                }
             }
         }
 
@@ -3238,6 +3316,9 @@
                 document.querySelectorAll('.btn-book-now').forEach(b => {
                     b.classList.remove('active');
                     b.textContent = 'BOOK NOW';
+                });
+                document.querySelectorAll('[data-glow]').forEach(c => {
+                    c.classList.remove('glow-active');
                 });
             }
         });
@@ -3275,11 +3356,67 @@
             });
         }
         
+        // Spotlight Glow Card Tracking
+        function initSpotlightCards() {
+            const glowCards = document.querySelectorAll('[data-glow]');
+            if (glowCards.length === 0) return;
+            
+            const syncPointer = (e) => {
+                const x = e.clientX;
+                const y = e.clientY;
+                const windowWidth = window.innerWidth;
+                const windowHeight = window.innerHeight;
+                
+                glowCards.forEach(card => {
+                    card.style.setProperty('--x', x.toFixed(2));
+                    card.style.setProperty('--xp', (x / windowWidth).toFixed(2));
+                    card.style.setProperty('--y', y.toFixed(2));
+                    card.style.setProperty('--yp', (y / windowHeight).toFixed(2));
+                });
+            };
+            
+            document.addEventListener('pointermove', syncPointer);
+            
+            // Mobile/touch support: when user touches/drags on the screen
+            const syncTouch = (e) => {
+                if (e.touches && e.touches.length > 0) {
+                    const x = e.touches[0].clientX;
+                    const y = e.touches[0].clientY;
+                    const windowWidth = window.innerWidth;
+                    const windowHeight = window.innerHeight;
+                    
+                    glowCards.forEach(card => {
+                        card.style.setProperty('--x', x.toFixed(2));
+                        card.style.setProperty('--xp', (x / windowWidth).toFixed(2));
+                        card.style.setProperty('--y', y.toFixed(2));
+                        card.style.setProperty('--yp', (y / windowHeight).toFixed(2));
+                    });
+                }
+            };
+            
+            document.addEventListener('touchmove', syncTouch, { passive: true });
+            document.addEventListener('touchstart', syncTouch, { passive: true });
+            
+            // Add click/tap active states for mobile
+            glowCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    // Remove active from other cards
+                    glowCards.forEach(c => c.classList.remove('glow-active'));
+                    // Add active to current card
+                    card.classList.add('glow-active');
+                });
+            });
+        }
+
         // Run after DOM is ready
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initSparkles);
+            document.addEventListener('DOMContentLoaded', () => {
+                initSparkles();
+                initSpotlightCards();
+            });
         } else {
             initSparkles();
+            initSpotlightCards();
         }
     </script>
 </body>
