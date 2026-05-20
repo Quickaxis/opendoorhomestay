@@ -2376,11 +2376,26 @@
         }
 
 @keyframes marquee-up {
-  0%   { opacity: 0; transform: translateY(80px); }
-  10%  { opacity: 1; transform: translateY(0px); }
-  30%  { opacity: 1; transform: translateY(0px); }
-  40%  { opacity: 0; transform: translateY(-80px); }
-  100% { opacity: 0; transform: translateY(-80px); }
+  0%   { 
+    opacity: 0; 
+    transform: translateY(100%); 
+  }
+  8%   { 
+    opacity: 1; 
+    transform: translateY(0%); 
+  }
+  25%  { 
+    opacity: 1; 
+    transform: translateY(0%); 
+  }
+  33%  { 
+    opacity: 0; 
+    transform: translateY(-100%); 
+  }
+  100% { 
+    opacity: 0; 
+    transform: translateY(-100%); 
+  }
 }
 
 .hero-headline-wrap {
@@ -2427,15 +2442,15 @@
   -webkit-mask-image: linear-gradient(
     to bottom,
     transparent 0%,
-    black 25%,
-    black 75%,
+    black 20%,
+    black 80%,
     transparent 100%
   );
   mask-image: linear-gradient(
     to bottom,
     transparent 0%,
-    black 25%,
-    black 75%,
+    black 20%,
+    black 80%,
     transparent 100%
   );
 }
@@ -2458,16 +2473,19 @@
   white-space: nowrap;
 
   opacity: 0;
-  transform: translateY(80px);
-  animation: marquee-up 5s infinite;
+  transform: translateY(100%);
+
+  /* Total cycle = 5 words × 2.5s each = 12.5s total */
+  animation: marquee-up 12.5s infinite;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Stagger each word using animation-delay */
+/* Each word starts at a different point in the 12.5s cycle */
 .mq-0 { animation-delay: 0s; }
-.mq-1 { animation-delay: 1s; }
-.mq-2 { animation-delay: 2s; }
-.mq-3 { animation-delay: 3s; }
-.mq-4 { animation-delay: 4s; }
+.mq-1 { animation-delay: 2.5s; }
+.mq-2 { animation-delay: 5s; }
+.mq-3 { animation-delay: 7.5s; }
+.mq-4 { animation-delay: 10s; }
 
 /* MOBILE */
 @media (max-width: 768px) {
