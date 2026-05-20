@@ -2375,10 +2375,12 @@
             border-color: transparent !important;
         }
 
-@keyframes slide-vertical {
-  to {
-    translate: 0 var(--destination);
-  }
+@keyframes marquee-up {
+  0%   { opacity: 0; transform: translateY(80px); }
+  10%  { opacity: 1; transform: translateY(0px); }
+  30%  { opacity: 1; transform: translateY(0px); }
+  40%  { opacity: 0; transform: translateY(-80px); }
+  100% { opacity: 0; transform: translateY(-80px); }
 }
 
 .hero-headline-wrap {
@@ -2399,9 +2401,11 @@
 
 .hero-marquee-row {
   display: flex;
-  align-items: baseline;
-  gap: 18px;
+  align-items: center;
+  gap: 20px;
+  height: 100px;
   overflow: hidden;
+  position: relative;
 }
 
 .hero-prefix {
@@ -2416,47 +2420,34 @@
 }
 
 .hero-marquee-mask {
-  --count: 5;
-  --speed: 0.8;
-  --item-height: 96px;
   position: relative;
+  height: 100px;
   overflow: hidden;
-  height: var(--item-height);
+  flex: 1;
   -webkit-mask-image: linear-gradient(
-    rgba(0,0,0,0) 0%,
-    rgb(0,0,0) 30%,
-    rgb(0,0,0) 70%,
-    rgba(0,0,0,0) 100%
+    to bottom,
+    transparent 0%,
+    black 25%,
+    black 75%,
+    transparent 100%
   );
   mask-image: linear-gradient(
-    rgba(0,0,0,0) 0%,
-    rgb(0,0,0) 30%,
-    rgb(0,0,0) 70%,
-    rgba(0,0,0,0) 100%
+    to bottom,
+    transparent 0%,
+    black 25%,
+    black 75%,
+    transparent 100%
   );
-}
-
-.hero-marquee-track {
-  --count: 5;
-  --speed: 0.8;
-  position: relative;
-  height: 100%;
 }
 
 .hero-marquee-item {
-  --count: 5;
-  --speed: 0.8;
-  --item-height: 96px;
-  --origin: calc((var(--count) - var(--index)) * var(--item-height));
-  --destination: calc((var(--index) + 1) * calc(-1 * var(--item-height)));
-  --duration: calc(var(--speed) * var(--count) * 1s);
-  --delay: calc((var(--duration) / var(--count)) * var(--index) - var(--duration));
-
   position: absolute;
-  height: var(--item-height);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
   display: flex;
   align-items: center;
-  white-space: nowrap;
 
   font-family: 'Cormorant Garamond', serif;
   font-size: 86px;
@@ -2464,31 +2455,38 @@
   font-style: italic;
   color: #C8972B;
   line-height: 1.0;
+  white-space: nowrap;
 
-  translate: 0 var(--origin);
-  animation: slide-vertical var(--duration) var(--delay) infinite linear;
+  opacity: 0;
+  transform: translateY(80px);
+  animation: marquee-up 5s infinite;
 }
+
+/* Stagger each word using animation-delay */
+.mq-0 { animation-delay: 0s; }
+.mq-1 { animation-delay: 1s; }
+.mq-2 { animation-delay: 2s; }
+.mq-3 { animation-delay: 3s; }
+.mq-4 { animation-delay: 4s; }
 
 /* MOBILE */
 @media (max-width: 768px) {
   .hero-static-line {
     font-size: 40px !important;
-    letter-spacing: -0.01em !important;
   }
   .hero-prefix {
     font-size: 40px !important;
   }
   .hero-marquee-item {
     font-size: 40px !important;
-    --item-height: 48px !important;
-    height: 48px !important;
-  }
-  .hero-marquee-mask {
-    height: 48px !important;
-    --item-height: 48px !important;
+    height: 52px !important;
   }
   .hero-marquee-row {
+    height: 52px !important;
     gap: 10px !important;
+  }
+  .hero-marquee-mask {
+    height: 52px !important;
   }
 }
     </style>
@@ -2600,13 +2598,11 @@
               <div class="hero-marquee-row">
                 <span class="hero-prefix">Opens to</span>
                 <div class="hero-marquee-mask">
-                  <div class="hero-marquee-track">
-                    <div class="hero-marquee-item" style="--index:0">Warmth</div>
-                    <div class="hero-marquee-item" style="--index:1">Comfort</div>
-                    <div class="hero-marquee-item" style="--index:2">Privacy</div>
-                    <div class="hero-marquee-item" style="--index:3">Peace</div>
-                    <div class="hero-marquee-item" style="--index:4">Home</div>
-                  </div>
+                  <div class="hero-marquee-item mq-0">Warmth</div>
+                  <div class="hero-marquee-item mq-1">Comfort</div>
+                  <div class="hero-marquee-item mq-2">Privacy</div>
+                  <div class="hero-marquee-item mq-3">Peace</div>
+                  <div class="hero-marquee-item mq-4">Home</div>
                 </div>
               </div>
             </div>
